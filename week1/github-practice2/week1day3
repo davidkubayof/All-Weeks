@@ -1,0 +1,12 @@
+import logging 
+
+logging.basicConfig(
+    evel=logging.DEBUG,
+    filename='app.log',
+    
+    formt='%(asctime)s %(levellanme)s %(message)s')
+
+logging.info("user loging in")
+
+
+
