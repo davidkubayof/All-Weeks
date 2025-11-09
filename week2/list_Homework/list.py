@@ -117,3 +117,112 @@
 #     return new
 
 # print(flatten_list([[1, 2], [3, 4], [5]]))
+
+# def slice_list(my_list, start, end): 
+#     return my_list[start:end]
+# print(slice_list([0, 1, 2, 3, 4, 5], 2, 5))
+# class Product:
+#     def __init__(self, name , quantity , price):
+#         self.name = name 
+#         self.quantity = quantity
+#         self.price = price
+
+# class Inventory: 
+#     def __init__(self): 
+#         self.products = [] 
+         
+#     def add_product(self,name, quantity, price):
+#         p = Product(name, quantity, price)
+#         self.products.append(p)
+
+#     def remove_product(self, name):
+#         for product in self.products:
+#             if product.name == name:
+#                 self.products.remove(product)
+
+
+#     def update_quantity(self, name, quantity):
+#          for product in self.products:
+#             if product.name == name:
+#                 product.quantity += quantity
+
+    # def get_total_value(self):
+    #     total_value = 0 
+    #     for product in self.products:
+    #         price = product.price 
+    #         quantity = product.quantity
+    #         value = price * quantity
+    #         total_value += value
+    #     return total_value
+    
+    # def get_low_stock(self,threshold):
+    #       low_inventory = []
+    #       for product in self.products:
+    #           if product.quantity <= threshold:
+    #               low_inventory.append(product.name)
+                  
+                  
+
+
+
+# inv = Inventory()
+# inv.add_product("David" , 4 , 100)
+# inv.add_product("dhikuh" , 4 , 100)
+# # print(inv.get_total_value())
+# inv.remove_product("David")
+
+
+# for p in inv.products:
+#     print(f"Name: {p.name}, Quantity: {p.quantity}, Price: ${p.price}")
+
+
+# print(inv.products)
+
+
+
+# class Studant:
+#     def __init__(self, name):
+#         self.__name = name
+
+#     def get(self):
+#         return f"name {self.__name}"
+
+#     def sater(self,name):
+#         self.__name = name
+#         return f"name sat {self.__name}"
+
+        
+# s1 = Studant("david")
+# print(s1.get())
+# print(s1.sater("simon"))
+
+class Vehicle:
+    def __init__(self , brand , model):
+        self.brand = brand
+        self.model = model
+
+    def start(self):
+        return f"{self.brand}{self.model} engine started "
+    
+# v1 = Vehicle("BMW",2025)
+
+class Car(Vehicle):
+    def __init__(self, brand, model, doors):
+        super().__init__(brand, model)#####
+
+c1 = Car("BMW",2025,4)
+print(c1.start())
+
+class Animal:
+    def active(self):
+        print("animal speak")
+
+class Speak(Animal):
+    def active(self):
+        print("speak active")
+
+class Go(Animal,Speak):
+    def active(self):
+        Speak.active(self)
+a1 = Animal()
+a1.active()
