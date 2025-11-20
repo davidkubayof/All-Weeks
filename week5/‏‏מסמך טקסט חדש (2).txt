@@ -1,0 +1,92 @@
+SELECT * FROM `data`
+SELECT * FROM `data`
+SELECT * FROM `products`
+SELECT * FROM `products` ORDER BY `products`.`productVendor` ASC
+SELECT * FROM `products` ORDER BY `products`.`productVendor`;
+SELECT COUNT(*) FROM products;
+SELECT min(*) FROM products;
+SELECT MIN(*) FROM products;
+SELECT MIN(amount) FROM payments;
+SELECT MAX(amount) FROM payments;
+SELECT AVG(amount) FROM payments;
+SELECT COUNT(*) FROM customers;
+SELECT COUNT(*) FROM customers WHERE country='France';
+SELECT COUNT(*) FROM customers WHERE country in('France','Spain');
+SELECT COUNT(*) FROM employees WHERE employees LIKE firstName 'a%'
+SELECT COUNT(*) FROM employees WHERE firstName LIKE 'a%';
+SELECT firstName, COUNT(*) FROM employees WHERE firstName LIKE 'a%';
+SELECT firstName, COUNT(*) FROM employees WHERE firstName LIKE 'a%' or firstName LIKE 'b%';
+SELECT firstName FROM employees WHERE firstName LIKE 'a%' or firstName LIKE 'b%';
+SELECT customerNumber, COUNT(*) AS total_ordes FROM orders GROUP BY customerNumber;
+SELECT firstName,customerNumber, COUNT(*) AS total_ordes FROM orders GROUP BY customerNumber;
+SELECT firstName,customerNumber, COUNT(*) AS total_ordes FROM orders GROUP BY customerNumber, firstName ;
+SELECT * FROM `customers`
+SELECT customerName,customerNumber, COUNT(*) AS total_ordes FROM orders GROUP BY customerNumber
+SELECT customerName,customerNumber, COUNT(*) AS total_ordes FROM orders GROUP BY customerNumber,customerName
+SELECT customerName, customerNumber, COUNT(*) AS total_orders FROM orders GROUP BY customerNumber, customerName;
+SELECT customerNumber, COUNT(*) AS total_ordes FROM orders GROUP BY customerNumber;
+SELECT * FROM `products`
+SELECT productVendor, COUNT(*) AS total_ordes FROM products GROUP BY productVendor;
+SELECT productVendor, COUNT(*) AS total_VEVE FROM products GROUP BY productVendor;
+SELECT * FROM `orders`
+SELECT * FROM `orders` ORDER BY `orders`.`status` ASC
+SELECT * FROM `orders` ORDER BY `orders`.`status` DESC
+SELECT * FROM `orders` ORDER BY `orders`.`status` ASC
+SELECT status, COUNT(*) AS total_STATUS FROM orders GROUP BY status;
+SELECT * FROM `customers`
+SELECT avg(creditLimit) FROM customers;
+SELECT avg(creditLimit) , salesRepEmployeeNumber FROM customers;
+SELECT avg(creditLimit) , salesRepEmployeeNumber FROM customers GROUP BY salesRepEmployeeNumber;
+SELECT min(creditLimit), max(creditLimit) , country FROM customers GROUP BY country;
+SELECT * FROM `employees`
+SELECT * FROM `employees`
+SELECT officeCode , COUNT(*) AS total_offis FROM employees GROUP BY officeCode;
+SELECT avg(creditLimit) FROM customers;
+SELECT * FROM `customers` ORDER BY `customers`.`customerName` DESC;
+SELECT * FROM `payments`
+SELECT * FROM `payments` ORDER BY `payments`.`amount` ASC
+SELECT * FROM `payments` ORDER BY `payments`.`amount` DESC
+SELECT * FROM `payments` ORDER BY `payments`.`amount` ASC
+SELECT avg(amount) FROM payments;
+SELECT avg(amount),customerNumber FROM payments GROUP BY customerNumber;
+SELECT avg(amount),customerNumber FROM payments GROUP BY customerNumber DESC;
+SELECT * FROM `products`
+SELECT productVendor ,AVG(buyPrice) FROM products GROUP BY productVendor;
+SELECT * FROM `customers`
+SELECT salesRepEmployeeNumber COUNT(*) FROM customers GROUP BY salesRepEmployeeNumber
+SELECT salesRepEmployeeNumber,COUNT(*) FROM customers GROUP BY salesRepEmployeeNumber;
+SELECT * FROM `orders`
+SELECT orderDate FROM orders ORDER BY orderDate;
+SELECT orderDate , max(orderDate) FROM orders ORDER BY orderDate;
+SELECT * FROM `orders`
+SELECT orderDate ,COUNT(*) FROM orders ORDER BY orderDate;
+SELECT orderDate ,COUNT(*) FROM orders GROUP BY orderDate ORDER BY orderDate;
+SELECT orderDate ,COUNT(*) FROM orders GROUP BY orderDate;
+SELECT orderDate ,COUNT(*) FROM orders GROUP BY orderDate;
+SELECT orderDate ,COUNT(*) FROM orders ORDER BY orderDate;
+SELECT orderDate ,COUNT(*) AS TOTAL FROM orders GROUP BY orderDate ORDER BY orderDate;
+SELECT orderDate ,COUNT(*) AS TOTAL FROM orders GROUP BY orderDate ORDER BY TOTAL;
+SELECT orderDate ,COUNT(*) AS TOTAL FROM orders GROUP BY orderDate;
+SELECT orderDate ,COUNT(orderDate) FROM orders ORDER BY orderDate;
+SELECT orderDate ,COUNT(orderDate) FROM orders;
+SELECT orderDate ,COUNT(orderDate) FROM orders GROUP BY orderDate;
+SELECT orderDate ,COUNT(orderDate) FROM orders GROUP BY orderDate ORDER BY `orders`.`orderDate` DESC
+SELECT orderDate ,COUNT(orderDate) FROM orders GROUP BY orderDate ORDER BY `orders`.`orderDate` ASC
+SELECT COUNT(orderDate) FROM orders GROUP BY orderDate;
+SELECT COUNT(orderDate) FROM orders GROUP BY orderDate;
+SELECT * FROM `orders`
+SELECT * FROM `orders` ORDER BY `orders`.`orderDate` DESC
+SELECT * FROM `orders` ORDER BY `orders`.`orderDate` ASC
+SELECT COUNT(orderDate) ,COUNT(*) FROM orders GROUP BY orderDate;
+SELECT COUNT(orderDate) ,COUNT(*) FROM orders GROUP BY orderDate;
+SELECT COUNT(orderDate) ,COUNT(*) FROM orders GROUP BY orderDate ORDER BY `COUNT(*)` ASC
+SELECT COUNT(orderDate) ,COUNT(*) FROM orders GROUP BY orderDate ORDER BY `COUNT(*)` DESC
+SELECT COUNT(orderDate) FROM orders GROUP BY orderDate ORDER BY `COUNT(*)` DESC
+SELECT COUNT(*) FROM orders GROUP BY orderDate ORDER BY `COUNT(*)` DESC;
+SELECT * FROM `products`
+SELECT * FROM `products` ORDER BY `products`.`productScale` ASC
+SELECT COUNT(*) FROM products ORDER BY productScale;
+SELECT productScale FROM products ORDER BY productScale;
+SELECT productScale FROM products GROUP BY productScale;
+Expand Requery Edit Explain Profiling Bookmark Database : classicmodels Queried time : 12:26:8
+SELECT productScale , COUNT(quantityInStock) FROM products GROUP BY productScale;

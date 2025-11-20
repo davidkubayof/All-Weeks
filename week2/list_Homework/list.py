@@ -196,33 +196,33 @@
 # print(s1.get())
 # print(s1.sater("simon"))
 
-class Vehicle:
-    def __init__(self , brand , model):
-        self.brand = brand
-        self.model = model
+# class Vehicle:
+#     def __init__(self , brand , model):
+#         self.brand = brand
+#         self.model = model
 
-    def start(self):
-        return f"{self.brand}{self.model} engine started "
+#     def start(self):
+#         return f"{self.brand}{self.model} engine started "
     
-# v1 = Vehicle("BMW",2025)
+# # v1 = Vehicle("BMW",2025)
 
-class Car(Vehicle):
-    def __init__(self, brand, model, doors):
-        super().__init__(brand, model)#####
+# class Car(Vehicle):
+#     def __init__(self, brand, model, doors):
+#         super().__init__(brand, model)#####
 
-c1 = Car("BMW",2025,4)
-print(c1.start())
+# c1 = Car("BMW",2025,4)
+# print(c1.start())
 
-class Animal:
-    def active(self):
-        print("animal speak")
+# class Animal:
+#     def active(self):
+#         print("animal speak")
 
-class Speak(Animal):
-    def active(self):
-        print("speak active")
+# class Speak(Animal):
+#     def active(self):
+#         print("speak active")
 
-class Go(Animal,Speak):
-    def active(self):
-        Speak.active(self)
-a1 = Animal()
-a1.active()
+# class Go(Animal,Speak):
+#     def active(self):
+#         Speak.active(self)
+# a1 = Animal()
+# a1.active()

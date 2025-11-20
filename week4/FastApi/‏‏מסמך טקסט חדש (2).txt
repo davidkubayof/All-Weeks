@@ -1,0 +1,6 @@
+uvicorn main:app --reload
+# או
+fastapi dev main.py
+
+
+#pip install fastapi uvicorn

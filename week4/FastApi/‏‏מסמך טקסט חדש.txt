@@ -1,0 +1,25 @@
+# 1. Reverse
+curl -s "http://127.0.0.1:8000/reverse?text=moshe"
+# {"original":"moshe","reversed_text":"ehsom"}
+
+# 2. Uppercase
+curl -s "http://127.0.0.1:8000/uppercase/HelloWorld"
+# {"original":"HelloWorld","uppercased":"HELLOWORLD"}
+
+# 3. Remove Vowels
+curl -s -X POST http://127.0.0.1:8000/remove-vowels \
+     -H "Content-Type: application/json" \
+     -d '{"text":"Education"}'
+# {"original":"Education","without_vowels":"dctn"}
+
+# 4. Remove Every Third
+curl -s -X POST http://127.0.0.1:8000/remove-every-third \
+     -H "Content-Type: application/json" \
+     -d '{"text":"abcdefghi"}'
+# {"original":"abcdefghi","result":"abdeghi","removed_indexes":[3,6,9],"removed_chars":["c","f","i"]}
+
+# 5. Letter Counts
+curl -s -X POST http://127.0.0.1:8000/letter-counts \
+     -H "Content-Type: application/json" \
+     -d '{"text":"Mississippi"}'
+# {"original":"Mississippi","counts":{"m":1,"i":4,"s":4,"p":2},"saved_to":"data/letter_counts.json"}
