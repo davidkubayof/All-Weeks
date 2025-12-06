@@ -1,0 +1,50 @@
+from fastapi import FastAPI,File, UploadFile
+import uvicorn
+from datetime import datetime
+import csv
+from sqliteConnector import sqlite_connector
+
+app = FastAPI()
+@app.get("/")
+def get_root():
+    return {"ts": datetime.now()}
+
+@app.post("/send-file")
+def get_file(file: UploadFile = File()):
+    if not "csv" in file.content_type:
+        return {"msg": f"content_type: `{file.content_type}` not allowed!"}
+    db = sqlite_connector()
+    text = file.file.read().decode()
+   
+    # Parse CSV
+    reader = csv.reader(text.splitlines())
+    rows = [row for row in reader]
+    columns = rows[0]
+    rows = rows[1:]
+    num_params = ["?" for _ in columns]
+    # before add new data remove old => in sqlite can't remove only data so remove the table and create again
+    db.exec_query("drop table if exists imdb_top_1000_")
+    db.exec_query("""CREATE TABLE `imdb_top_1000_` (
+  `Series_Title` varchar(68) DEFAULT NULL,
+  `Released_Year` varchar(4) DEFAULT NULL,
+  `Certificate` varchar(8) DEFAULT NULL,
+  `Runtime` int(3) DEFAULT NULL,
+  `Genre` varchar(9) DEFAULT NULL,
+  `IMDB_Rating` decimal(2,1) DEFAULT NULL,
+  `Meta_score` varchar(34) DEFAULT NULL,
+  `Director` varchar(32) DEFAULT NULL,
+  `Gross` varchar(9) DEFAULT NULL
+)
+""")
+    for row in rows:
+        query = f"insert into imdb_top_1000_ ({", ".join(columns)}) values ({", ".join(num_params)})"
+        results = db.exec_query(query, tuple(row))
+    return {
+        "file_length": file.size,
+        "num_lines": len(rows) + 1,
+        "first_50_rows": rows[:50] ,
+        "results": results
+    }
+
+if __name__ == "__main__":
+    uvicorn.run(app)

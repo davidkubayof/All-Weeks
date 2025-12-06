@@ -84,7 +84,6 @@ class Inventory:
     def __init__(self):         
         self.products = [] 
 
-
     def add_product(self , name, quantity, price):
         self.products.append([name, quantity, price])
         return self.products
@@ -106,6 +105,12 @@ class Inventory:
         for product in self.products:
             if product[0] == name:
                product[1] = quantity
+    
+    def get_total_value(self):
+        conter = 0
+        for product in self.products:
+            conter += product[1]*product[2]
+        return conter
 
     def get_total_value(self):
         counter = 0
@@ -125,6 +130,38 @@ class Inventory:
         for product in self.products:
             if product[2]>maxi:
                 maxi =product[2]
+
+
+    def get_low_stock(self ,threshold):
+        low = []
+        for product in self.products:
+            if product[1] < threshold:
+                low.append(product)
+        return low
+ 
+    def sort_by_price(self):
+        products = self.products[:]  # העתקה כדי לא לשנות את המקור
+        sorted_list = []
+
+        while products:
+            # מציאת המוצר עם המחיר הנמוך ביותר
+            lowest = products[0]
+
+            print(lowest)
+            for product in products:
+                if product[2] < lowest[2]:
+                    lowest = product
+            sorted_list.append(lowest)
+            products.remove(lowest)
+
+        return sorted_list
+
+Inv=Inventory()
+Inv.add_product("david",2,1)
+Inv.add_product("davi",3,12)
+Inv.add_product("davi",4,13)
+#print(Inv.sort_by_price())
+Inv.sort_by_price()
 
 
 
