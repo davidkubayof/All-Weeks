@@ -107,10 +107,29 @@ class Inventory:
             if product[0] == name:
                product[1] = quantity
 
+    def get_total_value(self):
+        counter = 0
+        for product in self.products: 
+            counter+=product[2] * product[1]
+        return counter
+
+    def get_low_stock(self ,threshold):
+        low = []
+        for product in self.products:
+            if product[1] <= threshold:
+                low.append(product)
+        return low
+
+    def sort_by_price(self):
+        maxi = 0
+        for product in self.products:
+            if product[2]>maxi:
+                maxi =product[2]
+
+
 
 Inv=Inventory()
 Inv.add_product("david",2,1)
-Inv.add_product("davi",3,12)
-Inv.add_product("davi",4,13)
-print(Inv.update_quantity("david",5))
-print(Inv.products)
+Inv.add_product("davi",3,2)
+Inv.add_product("da",4,3)
+Inv.add_product("dav",6,4)
