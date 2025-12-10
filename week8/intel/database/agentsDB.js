@@ -1,0 +1,1 @@
+export const agents = []; // מאגר סוכנים מדומה
