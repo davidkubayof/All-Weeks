@@ -1,0 +1,109 @@
+הנה **כל הטקסט בגרסה נקייה**, ללא עיצוב מיוחד — מוכן להעתקה לקובץ:
+
+---
+
+כלים חשובים למבחן על אובייקטים ומערכים ב-JavaScript
+
+חלק 1: אובייקטים (Objects)
+
+1. יצירת אוביקט:
+   const person = {
+   name: "Avi",
+   age: 20,
+   city: "Tel Aviv"
+   };
+
+2. גישה לערכים:
+   person.name
+   person["age"]
+
+3. הוספה/שינוי:
+   person.job = "Developer";
+   person.age = 21;
+
+4. מחיקה:
+   delete person.city;
+
+5. מעבר על אוביקט:
+   for (let key in person) {
+   console.log(key, person[key]);
+   }
+
+6. קבלת מפתחות/ערכים:
+   Object.keys(person);
+   Object.values(person);
+   Object.entries(person);
+
+7. בדיקת קיום:
+   "name" in person
+
+---
+
+חלק 2: מערכים (Arrays)
+
+1. יצירת מערך:
+   const nums = [1, 2, 3];
+
+2. גישה לאיבר:
+   nums[0];
+
+3. אורך:
+   nums.length;
+
+פעולות חשובות:
+nums.push(4);     // מוסיף לסוף
+nums.pop();       // מוריד מהסוף
+nums.unshift(0);  // מוסיף להתחלה
+nums.shift();     // מוריד מההתחלה
+
+בדיקה:
+nums.includes(2);
+nums.indexOf(3);
+
+מעבר על מערך:
+for (let num of nums) console.log(num);
+
+---
+
+מתודות חשובות:
+
+map – יוצר מערך חדש:
+const doubled = nums.map(n => n * 2);
+
+filter – מסנן:
+const even = nums.filter(n => n % 2 === 0);
+
+find – מוצא איבר ראשון:
+const firstBig = nums.find(n => n > 2);
+
+forEach – מעבר ללא החזרה:
+nums.forEach(n => console.log(n));
+
+---
+
+אובייקטים בתוך מערכים:
+
+const users = [
+{ name: "Avi", age: 20 },
+{ name: "Noa", age: 25 }
+];
+
+דוגמה – למצוא משתמש מעל גיל 21:
+users.filter(u => u.age > 21);
+
+להוסיף שדה חדש לכל משתמש:
+users.map(u => ({ ...u, active: true }));
+
+---
+
+טיפים למבחן:
+
+* לדעת מתי משתמשים בנקודה ומתי בסוגריים מרובעים.
+* לזכור שמערכים הם סוג של אובייקטים.
+* להכיר pass by value ו-pass by reference.
+* להכיר העתקת אוביקט עם spread:
+  const copy = { ...person };
+
+---
+
+אם אתה רוצה – אני יכול גם ליצור לך קובץ מוכן (txt / pdf).
