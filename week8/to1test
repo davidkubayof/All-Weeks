@@ -106,3 +106,18 @@ obj.items.filter(item => item.price > 20)
 • או לבנות "דף נוסחאות" קצר יותר למבחן
 
 רק תגיד מה אתה רוצה!
+
+npm init -y
+"start": "node app.js"
+"type": "module"
+
+npm install readline-sync
+import { question } from "readline-sync"
+
+npm install nanoid
+import { nanoid } from 'nanoid'
+
+
+new Date()
+toLowerCase()
+includes("text")
