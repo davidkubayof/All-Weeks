@@ -1,0 +1,123 @@
+הנה **גרסה נקייה לחלוטין**, בלי עיצוב ובלי סימנים מיוחדים — מוכנה להעתקה ישר לקובץ TXT:
+
+---
+
+מערך בתוך אובייקט ואובייקטים בתוך מערך – סיכום למבחן
+
+1. אובייקט שבתוכו מערך:
+   const person = {
+   name: "Avi",
+   hobbies: ["football", "music", "coding"]
+   };
+
+גישה למערך בתוך האובייקט:
+person.hobbies
+person.hobbies[0]
+
+הוספה למערך:
+person.hobbies.push("gaming");
+
+2. מערך שבתוכו אובייקטים:
+   const users = [
+   { name: "Avi", age: 20 },
+   { name: "Noa", age: 25 },
+   { name: "Yosi", age: 30 }
+   ];
+
+גישה:
+users[0].name
+users[1].age
+
+מציאת אוביקט:
+users.find(u => u.age > 20);
+
+סינון:
+users.filter(u => u.age >= 25);
+
+שינוי כל האובייקטים:
+users.map(u => ({ ...u, active: true }));
+
+3. אובייקט שבתוכו מערך שבתוכו אובייקטים:
+   const school = {
+   name: "High School",
+   classes: [
+   {
+   grade: 10,
+   students: [
+   { name: "Avi", score: 90 },
+   { name: "Dana", score: 85 }
+   ]
+   },
+   {
+   grade: 11,
+   students: [
+   { name: "Tal", score: 78 },
+   { name: "Ben", score: 92 }
+   ]
+   }
+   ]
+   };
+
+גישה:
+school.classes[0].students[0].name
+school.classes[1].students[1].score
+
+דוגמה לשאלה:
+מציאת תלמידים עם ציון מעל 85:
+const highScores = school.classes.flatMap(c =>
+c.students.filter(s => s.score > 85)
+);
+
+4. מערך שבתוכו אובייקטים שבתוכם מערכים שבתוכם אובייקטים:
+   const data = [
+   {
+   id: 1,
+   items: [
+   { title: "Book", price: 30 },
+   { title: "Pencil", price: 5 }
+   ]
+   },
+   {
+   id: 2,
+   items: [
+   { title: "Bag", price: 100 },
+   { title: "Notebook", price: 15 }
+   ]
+   }
+   ];
+
+מציאת כל הפריטים שמעל מחיר 20:
+const expensive = data.flatMap(obj =>
+obj.items.filter(item => item.price > 20)
+);
+
+טיפים למבחן:
+
+* סוגריים מרובעים [] הם תמיד לאינדקסים.
+* נקודה . היא תמיד לשמות של מאפיינים.
+* לעבוד שלב אחרי שלב כשיש הרבה שכבות.
+* flatMap שימושי מאוד כשיש מערכים בתוך מערכים.
+
+---
+
+אם תרצה, אני גם יכול:
+• ליצור עבורך קובץ TXT מוכן
+• ליצור PDF
+• או לבנות "דף נוסחאות" קצר יותר למבחן
+
+רק תגיד מה אתה רוצה!
+
+npm init -y
+"start": "node app.js"
+"type": "module"
+
+npm install readline-sync
+import { question } from "readline-sync"
+
+npm install nanoid
+import { nanoid } from 'nanoid'
+
+
+new Date()
+toLowerCase()
+includes("text")
