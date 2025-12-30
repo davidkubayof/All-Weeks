@@ -1,19 +1,19 @@
 {
-  "name": "db",
+  "name": "project",
   "version": "1.0.0",
   "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "module",
-  "main": "db.js",
+  "main": "a.js",
   "scripts": {
-    "start": "node --watch app.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
   "dependencies": {
+    "@supabase/supabase-js": "^2.89.0",
     "dotenv": "^17.2.3",
-    "mysql2": "^3.16.0",
-    "readline-sync": "^1.4.10",
     "express": "^5.2.1",
     "nodemon":"3.1.11"
   }
