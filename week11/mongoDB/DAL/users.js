@@ -24,3 +24,7 @@ export async function eqOrBigerD() {
 const findOneAndDelete = await db.collection("users").find({threatLevel:{$gte:4}}).toArray()
     return findOneAndDelete;
 }    
+export async function findOneD(_id) {
+    const find = await db.collection("users").findOne({_id: new ObjectId(_id)})
+    return find;
+}

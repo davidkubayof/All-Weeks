@@ -1,5 +1,5 @@
 import express from 'express'
-import { creatUserC , getAllUsersC, eqOrBigerC , updatUserC ,  deletUserC } from '../ctrls/userC.js';
+import { creatUserC , getAllUsersC, eqOrBigerC , updatUserC ,  deletUserC , getByIdC} from '../ctrls/userC.js';
 
 const router = express.Router();
 
@@ -10,9 +10,8 @@ router.put('/:id/confirm',updatUserC)
 router.delete('/:id',deletUserC)
 
 //bonos
-// router.get('/:id', (req,res)=>{req.params})
+router.get('/:id', getByIdC)
 // router.get('/agent/:fieldCode', ()=>{})
 // router.get('/stats', ()=>{})
-
 
 export default router;

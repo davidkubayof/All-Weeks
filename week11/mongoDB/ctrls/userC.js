@@ -1,4 +1,4 @@
-import { creatUserS , getAllUsersS , eqOrBigerS , updatUserS ,  deletUserS} from "../servisece/creatUserS.js";
+import { creatUserS , getAllUsersS , eqOrBigerS , updatUserS ,  deletUserS , getByIdS } from "../servisece/creatUserS.js";
 
 export async function creatUserC(req, res) {
   try {
@@ -44,4 +44,11 @@ export async function deletUserC(req, res) {
     console.error(error);
   }
 }
-
+export async function getByIdC(req, res) {
+    try {
+        const result = await getByIdS(req.params.id);
+        res.send(result);
+    } catch (error) {
+        console.error(error);
+    }
+}
