@@ -2,7 +2,7 @@ class Animal {
     constructor(name , species ){
         this.name = name
         this.species = species
-        this.lastFedTime = ""
+        this.lastFedTime = null
     }
     feed(){
         this.lastFedTime = new Date()
@@ -11,11 +11,13 @@ class Animal {
 }
 class Carnivore extends Animal {
     feed(){
+        super.feed()
         console.log(`Feeding carnivore ${this.species} - meat served.`)
     }
 }
 class Herbivore extends Animal {
     feed(){
+        super.feed()
         console.log(`Feeding herbivore ${this.species} - veggies served.`)
     }
 }
@@ -27,15 +29,14 @@ class Zookeeper {
         this.animals.push(animal)
     }
     feedAll(){
-        this.animals.forEach((animal) => animal.lastFedTime = new Date() )
+        this.animals.forEach((animal) => animal.feed() )
     }
     getLastFed(name){
-        const animal = this.animals.find(anima => anima.name === name)
-        return animal.lastFedTime
+        const animal = this.animals.find(a => a.name === name)
+        return animal ? animal.lastFedTime : null
     }
     getBySpecies(species){
-        const index = this.animals.findIndex(animal => animal.species === species)
-        return this.animals[index]
+        return this.animals.filter(animal => animal.species === species)
     }
 }
 
