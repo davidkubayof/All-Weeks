@@ -1,7 +1,15 @@
-import jwt from 'jsonwebtoken'
+import express from 'express'
 import { config } from 'dotenv'
+import routerUser from './router/router.user.js'
+
 config()
-const token =  jwt.sign({username: "David" , id:1234}, process.env.JWT_SICRET, {expiresIn: '1h'})
-console.log(token);
-const res = jwt.verify(token,process.env.JWT_SICRET)
-console.log(res);
+
+const app = express()
+
+app.use(express.json())
+
+app.use('/', routerUser)
+
+app.listen(process.env.PORT ,() =>
+    console.log(`server run on port ${process.env.PORT}`)
+)

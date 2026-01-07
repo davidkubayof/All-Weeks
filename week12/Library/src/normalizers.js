@@ -1,0 +1,1 @@
+normalizeBook(book)
