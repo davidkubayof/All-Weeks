@@ -34,8 +34,26 @@ async function findByPk(num:number) {
   console.log(res);
 }
 // findByPk(4)
-async function findOne(email:string) {
+async function findOneByEmail(email:string) {
   const res = await Student.findOne({ where: { email: email}});
   console.log(res);
 }
-findOne('FAKE@GMAIL.COM')
+// findOneByEmail('FAKE@GMAIL.COM')
+async function findOneByEmailAndFullname(email:string,fullName:string) {
+  const res = await Student.findOne({ where: {email ,fullName}});
+  console.log(res);
+}
+// findOneByEmailAndFullname('FAKE@GMAIL.COM',"DK")
+
+async function updated(id:number , phone:string) {
+  const res = await Student.update({phone},{where:{id}});
+  console.log(res);
+}
+// updated(6,"yrjeskj")
+
+async function destroy(id:number) {
+  const res = await Student.destroy({ where: {id}});
+  console.log(res);
+}
+// destroy(6)
+

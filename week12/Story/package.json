@@ -1,0 +1,16 @@
+{
+  "name": "story",
+  "version": "1.0.0",
+  "description": "A clean JavaScript project for managing a library with validation,\r borrowing, expiration logic, and purchase planning.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
