@@ -1,0 +1,34 @@
+h1 { color: green; }
+.big { color: blue; }
+#title { color: red; }
+
+.note { font-size: 18px; }
+p.note { font-size: 20px; }
+
+div { background: yellow; }
+#box { background: blue; }
+.highlight { background: red; }
+
+.btn { color: white; }
+.primary { color: black; }
+a.primary { color: green; }
+
+p { font-size: 14px; }
+.content p { font-size: 16px; }
+#intro { font-size: 18px; }
+
+.header { color: red; }
+h2 { color: blue; }
+
+ul.menu { border: 1px solid black; }
+#list { border: 3px solid red; }
+
+p.msg { color: green; }
+#app p { color: blue; }
+
+.primary { background: green; }
+#save { background: red; }
+
+h3 { color: purple; }
+.subtitle { color: orange; }
+h3.subtitle { color: pink; }

@@ -1,0 +1,36 @@
+ body {
+    margin: 0;
+    border: double blue 4px; ;
+}
+
+.container {
+    height: 80%;
+    width: 100vh ;
+    background: aqua;
+    margin: 0 auto;
+}
+/*
+h1 {
+    margin: 0;
+    text-align: center;
+} */
+.img-wrapper {
+    width: 250px ;
+    height: 250px ;
+    border: double blue 4px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRopVHnRT5kSRJc-VQkSFA2yKWMCeTPfzbkCCnfdp3KoxZSEgbZZwfXvzYx4J09EXuv8wgeoW72v4RdlycpLudjpJgeBAF52Bzz7Ym4fE9B&s=10");     
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    left: 600px;
+    top: 200px;
+
+    display: inline-block;
+    
+}
+/* span {
+    border: double blue 4px;
+    position: relative;
+    color: white;
+    z-index: 1;
+}  */

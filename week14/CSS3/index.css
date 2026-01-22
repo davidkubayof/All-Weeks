@@ -1,0 +1,60 @@
+main {
+  background-color: black;
+  height: 100vh;
+}
+.container {
+  background-color: rgb(243, 237, 237);
+  display: inline-block;
+  width: 428px;
+  height: 926px;
+  margin: 35px 0px 0px 500px;
+  border-radius: 50px;
+}
+#fa-angle-left{
+    border: solid black ;
+    float: left;
+    font-size: 35px;
+    font-weight: 900;
+    margin: 40px 0px 0px 20px;
+}
+#h1 {
+    float: left;
+    border: solid black ;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 45px 0px 0px 80px;
+}
+#fa-bell {
+    border: solid black ;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 45px 0px 0px 40px;
+}
+#card-visa {
+    border: solid black ;  
+    margin: 45px 0px 0px 25px;
+}
+#h2 {
+    font-size: 20px;
+    font-weight: 700;
+    border: solid black ; 
+    margin: 35px 0px 0px 105px; 
+}
+
+#h3 {
+    float: left;
+    color: grey;
+    border: solid black ; 
+    margin: 45px 0px 0px 10px; 
+}
+#input1 {
+    border: solid black ; 
+    margin: 95px 0px 0px 0px;
+}
+#button1 {
+    color: purple;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 600px;
+    margin: 45px 0px 0px 10px; 
+}

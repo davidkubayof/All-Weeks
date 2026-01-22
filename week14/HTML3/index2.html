@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Personal Information</legend>
+        <div>
+          <label for="Full Name">Full Name</label>
+          <input type="text" id="Full Name" minlength="2" required />
+        </div>
+        <div>
+          <label for="Email"> Email </label>
+          <input type="email" id="Email" required />
+        </div>
+        <div>
+          <label for="Phone">Phone</label>
+          <input type="tel" id="Phone" />
+        </div>
+      </fieldset>
+    </form>
+    <br />
+    <hr />
+    <br />
+    <form>
+      <fieldset>
+        <legend>Ticket & Workshops</legend>
+        <label for="ticket">Ticket type:</label>
+        <select id="ticket" name="ticket" required>
+          <option value="">-- Select ticket --</option>
+          <option value="student">Student</option>
+          <option value="standard">Standard</option>
+          <option value="vip">VIP</option>
+        </select>
+
+        <br />
+
+        <label>Web Performance:</label>
+        <input type="checkbox" id="" name="" value="" />
+        <br />
+        <label>Accessibility:</label>
+        <input type="checkbox" id="" name="" value="" />
+        <br />
+        <label>Testing:</label>
+        <input type="checkbox" id="" name="" value="" />
+      </fieldset>
+    </form>
+    <br />
+    <hr />
+    <br />
+    <form>
+      <fieldset>
+        <legend>Payment Details</legend>
+          <div class="payment-options">
+            <button>Apply Coupon</button>
+            <button>Pay with Netbanking</button>
+          </div>
+          <div class="card-details">
+            <label for="card-number">Card Number</label>
+            <input
+              type="text"
+              id="card-number"
+              placeholder="1234 5678 9012 3456"
+            />
+            <label for="expiry-date">Expiry Date</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" />
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" placeholder="123" />
+            <label for="cardholder-name">Cardholder Name</label>
+            <input type="text" id="cardholder-name" placeholder="John Doe" />
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <br />
+    <hr />
+    <br />
+    <form>
+      <fieldset>
+        <legend>Agreements</legend>
+        <div>
+          <label for="personal">Personal Information</label>
+          <input type="text" name="personal" id="personal" required />
+        </div>
+        <div>
+          <label>Ticket & Workshops</label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>Payment Details</label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>Agreements</label>
+          <input type="text" />
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

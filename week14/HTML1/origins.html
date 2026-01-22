@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How It Began | המקור</title>
+    <style>
+      /* עיצוב כללי */
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f7f2; /* צבע נייר ישן מעט */
+        color: #2c3e50;
+        line-height: 1.6;
+      }
+
+      /* סרגל ניווט */
+      nav {
+        background-color: #2c3e50;
+        padding: 15px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav a {
+        color: #ecf0f1;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f1c40f;
+      }
+
+      /* מיכל תוכן */
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #1a252f;
+      }
+
+      /* טקסט הסיפור - שינוי מ-h1 ל-p לטובת קידום אתרים וקריאות */
+      .story-text {
+        font-size: 1.25rem;
+        font-style: italic;
+        color: #34495e;
+        margin: 30px 0;
+        padding: 20px;
+        border-right: 5px solid #f1c40f;
+        background: #fdfaf0;
+        text-align: left; /* הסיפור באנגלית */
+        direction: ltr;
+      }
+
+      /* עיצוב תמונות ומדיה */
+      img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 8px;
+        border: 8px solid white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .media-wrapper {
+        margin: 40px 0;
+      }
+
+      iframe {
+        width: 100%;
+        border-radius: 12px;
+        border: none;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* נגן אודיו */
+      figure {
+        background: #f1f1f1;
+        padding: 20px;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      audio {
+        height: 40px;
+      }
+
+      .download-btn {
+        background: #2c3e50;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="origins.html">Origins</a>
+      <a href="legacy.html">Legacy</a>
+      <a href="artifacts.html">Artifacts</a>
+      <a href="figures.html">Figures</a>
+    </nav>
+
+    <div class="container">
+      <h1>HTML!</h1>
+
+      <img
+        src="https://picsum.photos/400/400"
+        alt="תמונה אקראית של שעון או אווירה"
+      />
+
+      <p class="story-text">
+        It all started in a dusty corner of London, in a shop that time seemed
+        to forget. Mr. Weaver, the owner, spent fifty years fixing watches. He
+        was a quiet man who never sold anything; he only repaired. One rainy
+        Tuesday, he locked his door for the last time and simply vanished,
+        leaving a strange, golden pocket watch ticking loudly on his workbench.
+      </p>
+
+      <div class="media-wrapper">
+        <h3>מיקום החנות המסתורית</h3>
+        <iframe
+          height="350"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004%2C51.476%2C0.000%2C51.478&layer=mapnik"
+        >
+        </iframe>
+
+        <h3>צפו בעדות:</h3>
+        <iframe
+          height="450"
+          src="https://www.youtube.com/embed/DaCiWhR0QxE"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+
+      <figure>
+        <figcaption><strong>הקשיבו ל-T-Rex:</strong></figcaption>
+        <audio controls src="/shared-assets/audio/t-rex-roar.mp3"></audio>
+        <a href="/shared-assets/audio/t-rex-roar.mp3" class="download-btn"
+          >הורדה</a
+        >
+      </figure>
+    </div>
+  </body>
+</html>
