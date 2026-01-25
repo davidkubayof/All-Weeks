@@ -1,0 +1,103 @@
+body {
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(255, 3, 255);
+}
+.main {
+  border: 2px solid rgb(1, 254, 157);
+  width: 375px;
+  height: 812px;
+  background-color: #192038;
+}
+.line1 {
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  color: aliceblue;
+  align-items: center;
+  margin-left: 10px;
+}
+.fathar {
+  display: flex;
+  margin-left: 10%;
+}
+.line2 {
+  width: 80%;
+}
+.line3 {
+  width: 20%;
+}
+.line4 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+.line5 {
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  top: 120px;
+  margin-left: 280px;
+}
+.p-1 {
+  font-size: 18px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+.p-2 {
+  font-size: 8px;
+  color: rgb(137, 137, 137);
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+.img-song {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 5%;
+}
+.move-song {
+  display: flex;
+  justify-content: center;
+}
+.father2 {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.p-3 {
+  color: white;
+  font-size: 14px;
+  width: 80%;
+}
+.p-4 {
+  color: #ffffff;
+  font-size: 10px;
+  margin-left: 20px;
+}
+.fathar3 {
+  display: flex;
+}
+
+.img-left {
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 2px solid yellowgreen;
+}
+.date {
+  color: #ffffffcc;
+  height: 10px;
+  font-size: 8px;
+  margin-top: 28px;
+  margin-left: 20px;
+  border: 2px solid yellowgreen; 
+}
+
+.time-hute {
+  color: #ffffff;
+  font-size: 14px;
+  border: 2px solid yellowgreen;
+}
