@@ -1,0 +1,18 @@
+section:nth-last-of-type(2n) {
+  background: blue;
+}
+section:nth-last-of-type(3n + 1) {
+  background: rgb(239, 0, 0);
+}
+section:nth-last-of-type(3n + 2) {
+  background: rgb(58, 150, 0);
+}
+section::before {
+  content:'start  ';
+}
+section::first-letter {
+  text-transform: uppercase;
+}
+section::after {
+  content: ' end ';
+}

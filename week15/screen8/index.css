@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+header {
+  display: grid;
+  grid-template-columns: 4fr 4fr 1fr 1fr 40fr 1fr;
+  grid-template-rows: 40px 1fr;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  gap: 10px;
+  /* height: 2rem; */
+}
+header > nav i:nth-last-of-type(1) {
+  justify-self: center;
+}
+header > nav {
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+header > nav a {
+  text-decoration: none;
+  color: black;
+}
+header nav a:hover {
+  padding: 6px 0;
+  background-color: rgb(172, 162, 149);
+}
+header button i {
+  margin-left: 5px;
+}
+header button {
+  font-size: 15px;
+}
+header button:nth-of-type(1) {
+  border: 1px solid #ff9c4d;
+  color: #ff9c4d;
+  background-color: inherit;
+  padding: 10px 0;
+  border-radius: 18px;
+  width: 136px;
+}
+header button:nth-of-type(2) {
+  background-color: inherit;
+  border: none;
+  padding: 10px 0;
+  width: 127px;
+}
+header button:nth-of-type(2) i {
+  border: 1px rgb(194, 194, 194) solid;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: rgb(238, 233, 233);
+}
+.mobile-display {
+  display: none;
+}
+
+@media (320px <= width <= 750px) {
+  .pc-display {
+    display: none;
+  }
+  details summary::marker {
+  content: "🍔";
+  line-height: 1px;
+  font-size:40px;
+}
+  .mobile-display {
+    justify-self: end;
+    display: flow-root;
+  }
+  .mobile-display nav {
+    position: absolute;
+    top: 60px;
+    right: 100px;
+    align-self: end;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: white;
+  }
+  .mobile-display nav a {
+    align-self: flex-end;
+    display: flow-root;
+  }
+}

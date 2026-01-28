@@ -1,28 +1,32 @@
-body {
-    overflow: hidden;
-    height:100vh ;
-    margin: 0;
-  /* display: flex; */
+main {
+  background: gray;
+  display: flex;
+  align-items: stretch;
+  height: 200px;
+  border: 5px solid violet;
+  flex-wrap: nowrap;
 }
-
-.grand-father {
-    display: flex;
-    justify-content: center;
-    height: 70%;
-    width: 20%;
-    margin: 2rem;
-    border: 1em solid black;
-    padding: 2%;
-
+.box {
+  border: 1px solid black;
+  width: 100px;
+  flex-basis: 200px;
+  min-height: 100px;
 }
-.fathar1 {
-  border: 4px solid rgb(0, 255, 68);
-  /* width: 375px; */
-  /* height: 812px; */
-  background-color: #192038;
+.box1 {
+  background: blue;
+  flex-grow: 1;
+  flex-shrink: 1;
+  border: 5px solid yellowgreen;
 }
-.row {
-  border: 4px solid rgb(51, 76, 0);
-  color: white;
-  /* width: 10%; */
+.box2 {
+  background: red;
+  flex-grow: 2;
+  flex-shrink: 2;
+  border: 5px solid yellowgreen;
+}
+.box3 {
+  background: green;
+  flex-grow: 1;
+  flex-shrink: 1;
+  border: 5px solid yellowgreen;
 }
