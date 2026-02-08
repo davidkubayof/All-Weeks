@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(100, 48px);
+  grid-template-rows: repeat(30, 48px);
+}
+.cell {
+  background-color: rgb(124, 194, 238);
+}
+.soil1 {
+  background-image: url("./images/soil1.png");
+}
+.leaves1 {
+  background-image: url("./images/leaves1.png");
+}
+
+.grass5 {
+  background-image: url("./images/grass5.png");
+}
+.ground {
+  background-image: url("./images/soil1.png");
+}
+.bedrock {
+  background-image: url("./images/bedrock.webp");
+}
+.stone {
+  background-image: url("./images/stone.webp");
+}
+.cell:hover {
+  filter: brightness(1.1);
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.side-bar {
+  position: fixed;
+  top: 100px;
+  left: 50px;
+  width: 50px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool {
+  flex: 1;
+  background-size: cover;
+}
+
+.diamond-pickaxe {
+  cursor: url("images/sword-icon.webp"), pointer;
+  background-image: url("https://guileless-pegasus-d698c6.netlify.app/blocks/diamond-pickaxe.webp");
+}
+
+.diamond-axe {
+  cursor:
+    /* url("https://cdn.discordapp.com/attachments/1422164896061063218/1468186912765509815/axe_cursor_32.png?ex=69831b1d&is=6981c99d&hm=5713b6788353af2001fc5416b094214c3cbafe1d46cc5e0bef7ed4f5520daf59&"), */
+    pointer;
+  background-image: url("https://guileless-pegasus-d698c6.netlify.app/blocks/diamond-axe.webp");
+}
+
+.diamond-shovel {
+  cursor:
+    /* url("https://cdn.discordapp.com/attachments/1422164896061063218/1468186912333238404/shovel_32x32.png?ex=69831b1d&is=6981c99d&hm=5ad8564ef949ac9467fb1b3ebc57b3d10de581b0892006be965dfd890f82747f&"), */
+    pointer;
+  background-image: url("https://guileless-pegasus-d698c6.netlify.app/blocks/diamond-shovel.webp");
+}
+
+.shears {
+  background-image: url("https://guileless-pegasus-d698c6.netlify.app/blocks/shears.webp");
+}
+
+.img-grass {
+  background-color: rgb(253, 1, 1);
+  font-size: 200px;
+  color: rgb(255, 0, 0);
+  border: 20px solid rgb(255, 0, 0);
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  width: 50px;
+  height: 200px;
+  /* display: flex;
+  flex-direction: column; */
+z-index: 2;
+}

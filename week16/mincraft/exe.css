@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.mid-screen {
+  border: 2px solid yellow;
+  background: yellowgreen;
+  width: 380px;
+  height: 380px;
+}
+.first-p {
+  color: black;
+  border: 2px solid yellow;
+  /* grid-column: 16/28; */
+  /* grid-row: 7/8; */
+  /* align-items: center; */
+
+  /* justify-content: center; */
+  width: 160px;
+}
+.first-input {
+  grid-column: 7/8;
+  grid-row: 7/8;
+  border: 2px solid yellow;
+}
