@@ -1,7 +1,7 @@
 const Nav = () => {
   return (
     <>
-      <div className=" flex gap-5 justify-center border">
+      <div className=" flex gap-5 justify-center ">
         <label className="self-center">
           <input className="border " type="checkbox" />
           Show only active members

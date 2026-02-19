@@ -1,18 +1,16 @@
-import './App.css'
-import Cards from './Cards'
-import Headar from './Headar'
+import { createContext } from "react";
+import Headar from "./Headar";
 import Nav from './Nav'
 
-function App() {
-  
+export const ThemeContext = createContext("light");
 
+function App() {
   return (
-    <>
-    <Headar/>
-    <Nav/>
-    <Cards/>
-    </>
-  )
+    <ThemeContext.Provider value="dark">
+      <Headar />
+      <Nav/>
+    </ThemeContext.Provider>
+  );
 }
 
-export default App
+export default App;
