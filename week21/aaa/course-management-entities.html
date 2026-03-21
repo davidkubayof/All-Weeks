@@ -1,0 +1,2177 @@
+<!DOCTYPE html><html><head>
+      <title>course-management-entities</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/yosef/.cursor/extensions/shd101wyy.markdown-preview-enhanced-0.8.21-universal/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<div dir="rtl">
+<style>
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+pre {
+  direction: ltr;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  overflow-x: hidden;
+}
+
+code {
+  direction: ltr;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  word-wrap: break-word;
+}
+
+th {
+  background-color: #f5f5f5;
+}
+
+/* שליטה על רוחב עמודות */
+th:nth-child(1), td:nth-child(1) {
+  width: 25%;
+}
+
+th:nth-child(2), td:nth-child(2) {
+  width: 25%;
+}
+
+th:nth-child(3), td:nth-child(3) {
+  width: 50%;
+}
+</style>
+<h1 id="מסמך-ישויות-וקשרים---מערכת-ניהול-קורס">מסמך ישויות וקשרים - מערכת ניהול קורס </h1>
+<p>מסמך זה מתעד את הישויות והקשרים במערכת, אחד לאחד לפי ההגדרה שסיפקת.</p>
+<hr>
+<h2 id="users">Users </h2>
+<p>טבלה זו מתארת משתמשי מערכת מאוחדים לצורך התחברות, זיהוי והרשאות.<br>
+סוג ישות: <strong>Strong Entity + Master Data</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של משתמש</td>
+</tr>
+<tr>
+<td>firstName</td>
+<td>String</td>
+<td>שם פרטי</td>
+</tr>
+<tr>
+<td>lastName</td>
+<td>String</td>
+<td>שם משפחה</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String, UNIQUE</td>
+<td>אימייל כניסה למערכת</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String, Nullable</td>
+<td>טלפון משתמש לצרכי זיהוי/אימות</td>
+</tr>
+<tr>
+<td>passwordHash</td>
+<td>String</td>
+<td>סיסמה מוצפנת (Hash)</td>
+</tr>
+<tr>
+<td>twoFactorEnabled</td>
+<td>Boolean, Default false</td>
+<td>האם מוגדר לאימות דו-שלבי (2FA / MFA)</td>
+</tr>
+<tr>
+<td>isActive</td>
+<td>Boolean</td>
+<td>האם המשתמש פעיל ויכול להתחבר</td>
+</tr>
+<tr>
+<td>lastLoginAt</td>
+<td>DateTime, Nullable</td>
+<td>זמן התחברות אחרון</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>DateTime</td>
+<td>תאריך עדכון אחרון</td>
+</tr>
+</tbody>
+</table>
+<h2 id="staff">Staff </h2>
+<p>טבלה זו מתארת את אנשי הסגל במערכת והתפקיד הדומייני שלהם (מעבר לזהות ב-<code>Users</code>).<br>
+סוג ישות: <strong>Strong Entity (Subtype / Extension של Users)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של איש סגל</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>FK -&gt; <code>Users.id</code>, UNIQUE</td>
+<td>מזהה המשתמש המאוחד של איש הסגל לצורך התחברות והרשאות</td>
+</tr>
+<tr>
+<td>isSuperAdmin</td>
+<td>Boolean, Default false</td>
+<td>אדמין ראשי — גישה מלאה למערכת; עוקף בדיקות <code>Permissions</code> הרגילות</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Enum: <code>מפקד</code> / <code>מרצה</code> / <code>מתרגל</code></td>
+<td>תפקיד איש הסגל במערכת</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>DateTime</td>
+<td>תאריך עדכון אחרון של הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="permissions">Permissions </h2>
+<p>טבלה זו מתארת את ההרשאות האפשריות במערכת, לצורך ניהול גישה ויכולות.<br>
+סוג ישות: <strong>Reference Entity (Lookup Data)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של הרשאה</td>
+</tr>
+<tr>
+<td>key</td>
+<td>String, UNIQUE</td>
+<td>מפתח הרשאה ייחודי לשימוש לוגי במערכת</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>שם תצוגה של ההרשאה (בנוסף ל-<code>description</code> המפורט)</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>תיאור מורחב של ההרשאה</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="staffpermissions">StaffPermissions </h2>
+<p>טבלה זו מתארת את השיוך בין אנשי סגל לבין הרשאות במבנה דינמי.<br>
+סוג ישות: <strong>Junction Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של שיוך הרשאה לאיש סגל</td>
+</tr>
+<tr>
+<td>staffId</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>איש הסגל שאליו משויכת ההרשאה</td>
+</tr>
+<tr>
+<td>permissionId</td>
+<td>FK -&gt; <code>Permissions.id</code></td>
+<td>ההרשאה המשויכת</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>staffId + permissionId</td>
+<td>UNIQUE משולב</td>
+<td>מונע שיוך כפול של אותה הרשאה לאותו איש סגל</td>
+</tr>
+</tbody>
+</table>
+<p>החלטת מודל הרשאות: מקור האמת להרשאות לסגל רגיל הוא <code>Permissions</code> + <code>StaffPermissions</code>. אין שימוש בשדה <code>role</code> בטבלת <code>Users</code>. למשתמש עם <code>Staff.isSuperAdmin=true</code> מבוצע עקיפה מלאה (גישה לכל הפעולות).</p>
+<h2 id="cohort">Cohort </h2>
+<p>טבלה זו מתארת את מחזורי הקורס ואת סטטוס המחזור לאורך הזמן.<br>
+סוג ישות: <strong>Strong Entity (Domain Entity)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של מחזור</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>שם המחזור</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>Date</td>
+<td>תאריך התחלת המחזור</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>Date</td>
+<td>תאריך סיום המחזור</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Enum: <code>PLANNED</code> / <code>ACTIVE</code> / <code>FINISHED</code></td>
+<td>מצב המחזור</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="class">Class </h2>
+<p>טבלה זו מתארת את הכיתות בקורס ואת שיוכן למחזור.<br>
+סוג ישות: <strong>Strong Entity (Domain Entity)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של כיתה</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>שם הכיתה</td>
+</tr>
+<tr>
+<td>cohortId</td>
+<td>FK -&gt; <code>Cohort.id</code></td>
+<td>המחזור אליו הכיתה שייכת</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="students">Students </h2>
+<p>טבלה זו מתארת את תלמידי הקורס ואת פרטי היסוד שלהם במערכת.<br>
+סוג ישות: <strong>Strong Entity (Subtype / Extension של Users)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של תלמיד</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>FK -&gt; <code>Users.id</code>, UNIQUE</td>
+<td>מזהה המשתמש המאוחד של התלמיד לצורך התחברות והרשאות</td>
+</tr>
+<tr>
+<td>nationalId</td>
+<td>String, UNIQUE</td>
+<td>תעודת זהות (חובה, ייחודי במערכת)</td>
+</tr>
+<tr>
+<td>personalNumber</td>
+<td>String, UNIQUE, Nullable</td>
+<td>מספר אישי צבאי/מערכתי (אופציונלי, ייחודי אם מוגדר)</td>
+</tr>
+<tr>
+<td>classId</td>
+<td>FK -&gt; <code>Class.id</code></td>
+<td>הכיתה הנוכחית של התלמיד (נגזר מהשיוך הפעיל ב-<code>StudentClass</code>)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Enum: <code>ACTIVE</code> / <code>DROPPED</code> / <code>FINISHED</code></td>
+<td>סטטוס לימודי של התלמיד בקורס</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>DateTime</td>
+<td>תאריך עדכון אחרון של הרשומה</td>
+</tr>
+</tbody>
+</table>
+<p>הערה: סטטוס <strong>תורן</strong> נגזר מ־<code>StudentDutyPeriods</code> (טווח תאריכים), לא משדה בוליאני ב־<code>Students</code>.</p>
+<h2 id="studentdutyperiods">StudentDutyPeriods </h2>
+<p>טבלה זו מתארת היסטוריית תקופות שבהן התלמיד משמש חניך תורן (כולל תכנון מראש).<br>
+סוג ישות: <strong>Associative / Junction Entity + Temporal Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של רשומת תקופת תורנות</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד הנוגע לתורנות</td>
+</tr>
+<tr>
+<td>classId</td>
+<td>FK -&gt; <code>Class.id</code>, Nullable</td>
+<td>כיתה משויכת (אם התורנות קשורה לכיתה מסוימת)</td>
+</tr>
+<tr>
+<td>fromDate</td>
+<td>Date</td>
+<td>תאריך תחילת התורנות</td>
+</tr>
+<tr>
+<td>toDate</td>
+<td>Date, Nullable</td>
+<td>תאריך סיום (רושמים מראש גם עתיד; ריק = פעיל/ללא סיום מוגדר)</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>String, Nullable</td>
+<td>הערות (למשל: סוג תורנות, הנחיות)</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>FK -&gt; <code>Staff.id</code>, Nullable</td>
+<td>איש הסגל שיצר/קבע את הרשומה</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>DateTime, Nullable</td>
+<td>תאריך עדכון אחרון</td>
+</tr>
+</tbody>
+</table>
+<p>חוק אינטגריטי: לכל תלמיד רצוי שלא תהיה חפיפה בין טווחי תאריכים של תקופות תורן (אכיפה ב־DB או בלוגיקה).</p>
+<h2 id="studentclass">StudentClass </h2>
+<p>טבלה זו מתארת את היסטוריית השיוך של תלמידים לכיתות לפי טווח תאריכים.<br>
+סוג ישות: <strong>Associative / Junction Entity + Temporal Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של שיוך תלמיד לכיתה</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד המשויך</td>
+</tr>
+<tr>
+<td>classId</td>
+<td>FK -&gt; <code>Class.id</code></td>
+<td>הכיתה המשויכת</td>
+</tr>
+<tr>
+<td>fromDate</td>
+<td>Date</td>
+<td>תאריך התחלת שיוך התלמיד לכיתה</td>
+</tr>
+<tr>
+<td>toDate</td>
+<td>Date, Nullable</td>
+<td>תאריך סיום שיוך (ריק כאשר השיוך פעיל)</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>studentId + classId + fromDate</td>
+<td>UNIQUE משולב</td>
+<td>מונע פתיחה כפולה של אותו שיוך באותו תאריך התחלה</td>
+</tr>
+</tbody>
+</table>
+<p>הערה: <code>Students.classId</code> נשמר כשיוך הכיתה הנוכחית לצרכי ביצועים ופשטות תפעול, ו-<code>StudentClass</code> משמש להיסטוריית מעברים בין כיתות.<br>
+חוק אינטגריטי: <code>Students.classId</code> חייב להיות זהה ל-<code>classId</code> של רשומת <code>StudentClass</code> הפעילה (<code>toDate IS NULL</code>).<br>
+חוק אינטגריטי נוסף: לכל תלמיד מותרת רשומת שיוך פעילה אחת בלבד (<code>UNIQUE חלקי על studentId כאשר toDate IS NULL</code>).<br>
+חוק אינטגריטי נוסף: אין חפיפה בין טווחי תאריכים של אותו תלמיד (exclusion constraint על טווחי תוקף).</p>
+<h2 id="studentcohort">StudentCohort </h2>
+<p>טבלה זו מתארת שיוך תלמיד למחזורים לאורך זמן לצרכי היסטוריה ודיווח.<br>
+סוג ישות: <strong>Associative / Junction Entity + Temporal Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של שיוך תלמיד למחזור</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד המשויך</td>
+</tr>
+<tr>
+<td>cohortId</td>
+<td>FK -&gt; <code>Cohort.id</code></td>
+<td>המחזור המשויך</td>
+</tr>
+<tr>
+<td>fromDate</td>
+<td>Date</td>
+<td>תאריך התחלת שיוך למחזור</td>
+</tr>
+<tr>
+<td>toDate</td>
+<td>Date, Nullable</td>
+<td>תאריך סיום שיוך למחזור (ריק כאשר פעיל)</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>studentId + cohortId + fromDate</td>
+<td>UNIQUE משולב</td>
+<td>מונע פתיחה כפולה של אותו שיוך לאותו תאריך התחלה</td>
+</tr>
+</tbody>
+</table>
+<p>חוק אינטגריטי: לכל תלמיד מותרת רשומת מחזור פעילה אחת בלבד (<code>UNIQUE חלקי על studentId כאשר toDate IS NULL</code>).<br>
+חוק אינטגריטי נוסף: אין חפיפה בין טווחי מחזורים של אותו תלמיד.</p>
+<h2 id="studentevents">StudentEvents </h2>
+<p>טבלה זו מתארת אירועים/רישומים בתיק האישי של התלמיד (יומן מנהלי-חינוכי).<br>
+סוג ישות: <strong>Strong Entity (Domain Entity)</strong> + <strong>Transactional</strong> בציר זמן.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של האירוע</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד אליו האירוע שייך</td>
+</tr>
+<tr>
+<td>eventType</td>
+<td>String</td>
+<td>סוג האירוע (טקסט חופשי / תיוג לוגי שהמערכת מאפשרת)</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>כותרת האירוע</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String, Nullable</td>
+<td>תיאור מפורט</td>
+</tr>
+<tr>
+<td>severity</td>
+<td>Enum: <code>INFO</code> / <code>NOTICE</code> / <code>WARNING</code> / <code>CRITICAL</code>, Nullable</td>
+<td>חומרה לתצוגה וסינון</td>
+</tr>
+<tr>
+<td>visibility</td>
+<td>Enum: <code>STAFF_ONLY</code> / <code>STUDENT_READ</code></td>
+<td>מי רשאי לראות (למשל רק סגל או גם התלמיד)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Enum: <code>OPEN</code> / <code>CLOSED</code> / <code>ARCHIVED</code></td>
+<td>מצב טיפול ברשומה</td>
+</tr>
+<tr>
+<td>relatedClassId</td>
+<td>FK -&gt; <code>Class.id</code>, Nullable</td>
+<td>כיתה קשורה לאירוע (אם רלוונטי)</td>
+</tr>
+<tr>
+<td>occurredAt</td>
+<td>DateTime, Nullable</td>
+<td>מועד בו האירוע התרחש בעולם (אם שונה מיצירת הרשומה)</td>
+</tr>
+<tr>
+<td>openedBy</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>איש הסגל שפתח/רשם את האירוע</td>
+</tr>
+<tr>
+<td>closedBy</td>
+<td>FK -&gt; <code>Staff.id</code>, Nullable</td>
+<td>איש הסגל שסגר/ארכב</td>
+</tr>
+<tr>
+<td>closedAt</td>
+<td>DateTime, Nullable</td>
+<td>מועד סגירה</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>DateTime</td>
+<td>תאריך עדכון אחרון</td>
+</tr>
+</tbody>
+</table>
+<h2 id="studenteventattachments">StudentEventAttachments </h2>
+<p>טבלה זו מקשרת קבצים לאירועי תלמיד.<br>
+סוג ישות: <strong>Junction Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של צירוף קובץ</td>
+</tr>
+<tr>
+<td>studentEventId</td>
+<td>FK -&gt; <code>StudentEvents.id</code></td>
+<td>האירוע המשויך</td>
+</tr>
+<tr>
+<td>fileId</td>
+<td>FK -&gt; <code>Files.id</code></td>
+<td>הקובץ המצורף</td>
+</tr>
+<tr>
+<td>sortOrder</td>
+<td>Number</td>
+<td>סדר תצוגה</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך צירוף</td>
+</tr>
+<tr>
+<td>studentEventId + fileId</td>
+<td>UNIQUE משולב</td>
+<td>מונע צירוף כפול של אותו קובץ לאותו אירוע</td>
+</tr>
+</tbody>
+</table>
+<h2 id="staffclass">StaffClass </h2>
+<p>טבלה זו מתארת את השיוך בין אנשי סגל לכיתות.<br>
+סוג ישות: <strong>Junction Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של שיוך איש סגל לכיתה</td>
+</tr>
+<tr>
+<td>staffId</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>איש הסגל המשויך</td>
+</tr>
+<tr>
+<td>classId</td>
+<td>FK -&gt; <code>Class.id</code></td>
+<td>הכיתה המשויכת</td>
+</tr>
+<tr>
+<td>staffId + classId</td>
+<td>UNIQUE משולב</td>
+<td>מונע שיוך כפול של אותו איש סגל לאותה כיתה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="files">Files </h2>
+<p>טבלה זו מתארת קבצים שמועלים למערכת והמטא-דאטה שלהם.<br>
+סוג ישות: <strong>Asset / Resource Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של קובץ</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>קישור לאחסון הקובץ</td>
+</tr>
+<tr>
+<td>fileName</td>
+<td>String</td>
+<td>שם הקובץ</td>
+</tr>
+<tr>
+<td>size</td>
+<td>Number</td>
+<td>גודל הקובץ בבייטים</td>
+</tr>
+<tr>
+<td>uploadedByUserId</td>
+<td>FK -&gt; <code>Users.id</code></td>
+<td>מזהה משתמש מאוחד שהעלה את הקובץ</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<p>חוק אינטגריטי: הקשר למעלה קובץ נאכף דרך <code>Users</code>, והקישור ל-<code>Staff</code>/<code>Students</code> נגזר דרך <code>userId</code>.</p>
+<h2 id="materials">Materials </h2>
+<p>טבלה זו מתארת את חומרי הלימוד המפורסמים לכל כיתה.<br>
+סוג ישות: <strong>Strong Entity (Domain Entity)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של חומר לימוד</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>כותרת חומר הלימוד</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>תיאור חומר הלימוד</td>
+</tr>
+<tr>
+<td>classId</td>
+<td>FK -&gt; <code>Class.id</code></td>
+<td>הכיתה לה מיועד החומר</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>איש הסגל שיצר את חומר הלימוד</td>
+</tr>
+<tr>
+<td>requiresSubmission</td>
+<td>Boolean</td>
+<td>האם החומר דורש הגשה מהתלמידים</td>
+</tr>
+<tr>
+<td>dueDate</td>
+<td>DateTime, Nullable</td>
+<td>מועד אחרון להגשה (אם יש)</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="materialresources">MaterialResources </h2>
+<p>טבלה זו מתארת משאבים המשויכים לחומר לימוד (קבצים, קישורים, וידאו ועוד).<br>
+סוג ישות: <strong>Dependent / Composition Entity (Child of Materials)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של משאב חומר</td>
+</tr>
+<tr>
+<td>materialId</td>
+<td>FK -&gt; <code>Materials.id</code></td>
+<td>החומר אליו המשאב שייך</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Enum: <code>FILE</code> / <code>LINK</code> / <code>VIDEO</code></td>
+<td>סוג המשאב</td>
+</tr>
+<tr>
+<td>fileId</td>
+<td>FK -&gt; <code>Files.id</code>, Nullable</td>
+<td>קישור לקובץ פנימי כאשר הסוג הוא <code>FILE</code></td>
+</tr>
+<tr>
+<td>url</td>
+<td>String, Nullable</td>
+<td>קישור חיצוני כאשר הסוג הוא <code>LINK</code>/<code>VIDEO</code></td>
+</tr>
+<tr>
+<td>title</td>
+<td>String, Nullable</td>
+<td>כותרת משאב להצגה</td>
+</tr>
+<tr>
+<td>sortOrder</td>
+<td>Number</td>
+<td>סדר הצגה בתוך החומר</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="submissions">Submissions </h2>
+<p>טבלה זו מתארת את ההגשות של תלמידים עבור חומרי לימוד.<br>
+סוג ישות: <strong>Transactional Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של הגשה</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד שהגיש</td>
+</tr>
+<tr>
+<td>materialId</td>
+<td>FK -&gt; <code>Materials.id</code></td>
+<td>חומר הלימוד אליו ההגשה שייכת</td>
+</tr>
+<tr>
+<td>fileUrl</td>
+<td>String</td>
+<td>קישור לקובץ שהוגש</td>
+</tr>
+<tr>
+<td>submissionNumber</td>
+<td>Number</td>
+<td>מספר ניסיון ההגשה עבור אותו חומר</td>
+</tr>
+<tr>
+<td>isLatest</td>
+<td>Boolean</td>
+<td>האם זו ההגשה העדכנית ביותר עבור אותו חומר</td>
+</tr>
+<tr>
+<td>submittedAt</td>
+<td>DateTime</td>
+<td>מועד ההגשה</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Enum: <code>SUBMITTED</code> / <code>LATE</code></td>
+<td>סטטוס ההגשה בפועל</td>
+</tr>
+<tr>
+<td>studentId + materialId + submissionNumber</td>
+<td>UNIQUE משולב</td>
+<td>מאפשר ריבוי הגשות ומונע כפילות ניסיון</td>
+</tr>
+</tbody>
+</table>
+<p>הערה: מצב <code>MISSING</code> מחושב לוגית בדוחות (<code>NOT EXISTS</code>) ולא נשמר כרשומה פיזית.</p>
+<h2 id="grades">Grades </h2>
+<p>טבלה זו מתארת ציונים לתלמידים, עבור חומר לימודי או הערכות עצמאיות.<br>
+סוג ישות: <strong>Transactional Entity + Versioned / Attempt-based Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של ציון</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד שקיבל ציון</td>
+</tr>
+<tr>
+<td>materialId</td>
+<td>FK -&gt; <code>Materials.id</code>, Nullable</td>
+<td>חומר לימוד משויך (אם הציון קשור לחומר)</td>
+</tr>
+<tr>
+<td>gradeType</td>
+<td>Enum: <code>MATERIAL</code> / <code>EXAM</code> / <code>INTERVIEW</code> / <code>MANUAL</code></td>
+<td>סוג הציון שניתן</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>כותרת הציון (למשל: בוחן אמצע, הערכה ידנית)</td>
+</tr>
+<tr>
+<td>attemptNumber</td>
+<td>Number, Default 1</td>
+<td>מספר ניסיון עבור אותה הערכה</td>
+</tr>
+<tr>
+<td>isFinal</td>
+<td>Boolean, Default false</td>
+<td>האם זה הציון הקובע לדיווח</td>
+</tr>
+<tr>
+<td>score</td>
+<td>Number</td>
+<td>הציון שניתן</td>
+</tr>
+<tr>
+<td>feedback</td>
+<td>TEXT, Nullable</td>
+<td>משוב מסגל — מומלץ לאחסן <strong>HTML</strong> (טבלאות עיצוב וכו'). ב־PostgreSQL אין טיפוס נפרד ל־HTML: משתמשים ב־<code>TEXT</code> או <code>VARCHAR</code>; התוכן הוא מחרוזת והפרדה בין "טקסט רגיל" ל־HTML היא בהסכמה באפליקציה (<code>feedbackFormat</code> או קונבנציית תצוגה).</td>
+</tr>
+<tr>
+<td>feedbackFormat</td>
+<td>Enum: <code>PLAIN</code> / <code>HTML</code>, Default <code>PLAIN</code></td>
+<td>האם המשוב בשדה <code>feedback</code> הוא טקסט רגיל או HTML (לצורך רינדור בטוח — סניטציה בצד שרת/לקוח)</td>
+</tr>
+<tr>
+<td>gradedBy</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>איש הסגל שנתן את הציון</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>studentId + materialId + attemptNumber</td>
+<td>UNIQUE חלקי כאשר <code>materialId</code> לא ריק</td>
+<td>מאפשר היסטוריית ניסיונות ומונע כפילות ניסיון</td>
+</tr>
+<tr>
+<td>studentId + materialId + isFinal=true</td>
+<td>UNIQUE חלקי כאשר <code>materialId</code> לא ריק</td>
+<td>מבטיח ציון סופי יחיד לכל תלמיד ולכל חומר</td>
+</tr>
+<tr>
+<td>studentId + gradeType + title + isFinal=true</td>
+<td>UNIQUE חלקי כאשר <code>materialId</code> ריק</td>
+<td>מבטיח ציון סופי יחיד להערכה ידנית/מבחן שאינה קשורה לחומר</td>
+</tr>
+</tbody>
+</table>
+<h2 id="classsessions">ClassSessions </h2>
+<p>טבלה זו מתארת מפגשי לימוד בפועל (שיעורים), כבסיס לנוכחות ומעקב יומי.<br>
+סוג ישות: <strong>Strong Entity (Operational Domain Entity)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של מפגש</td>
+</tr>
+<tr>
+<td>classId</td>
+<td>FK -&gt; <code>Class.id</code></td>
+<td>הכיתה של המפגש</td>
+</tr>
+<tr>
+<td>topic</td>
+<td>String, Nullable</td>
+<td>נושא השיעור</td>
+</tr>
+<tr>
+<td>startsAt</td>
+<td>DateTime</td>
+<td>זמן תחילת המפגש</td>
+</tr>
+<tr>
+<td>endsAt</td>
+<td>DateTime</td>
+<td>זמן סיום המפגש</td>
+</tr>
+<tr>
+<td>lecturerStaffId</td>
+<td>FK -&gt; <code>Staff.id</code>, Nullable</td>
+<td>איש סגל מוביל המפגש</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="attendance">Attendance </h2>
+<p>טבלה זו מתארת נתוני נוכחות תלמידים ברמת מפגש לימוד.<br>
+סוג ישות: <strong>Transactional Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של רשומת נוכחות</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד אליו הנוכחות שייכת</td>
+</tr>
+<tr>
+<td>sessionId</td>
+<td>FK -&gt; <code>ClassSessions.id</code></td>
+<td>המפגש בו נרשמה הנוכחות</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Enum: <code>PRESENT</code> / <code>ABSENT</code> / <code>LATE</code></td>
+<td>סטטוס נוכחות התלמיד במפגש</td>
+</tr>
+<tr>
+<td>markedBy</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>איש הסגל שסימן את הנוכחות</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>studentId + sessionId</td>
+<td>UNIQUE משולב</td>
+<td>מונע כפילות רשומת נוכחות לאותו תלמיד באותו מפגש</td>
+</tr>
+</tbody>
+</table>
+<h2 id="attendancedaily">AttendanceDaily </h2>
+<p>טבלה זו מתארת נוכחות <strong>ברמת יום</strong> (מעבר למפגש בודד), כאשר נדרש סימון אחד ליום שלם לתלמיד בכיתה.<br>
+סוג ישות: <strong>Transactional Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של רשומת נוכחות יומית</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד</td>
+</tr>
+<tr>
+<td>classId</td>
+<td>FK -&gt; <code>Class.id</code></td>
+<td>הכיתה שבה נספר היום</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+<td>תאריך היום</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Enum: <code>PRESENT</code> / <code>ABSENT</code> / <code>LATE</code></td>
+<td>סטטוס נוכחות ליום</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>String, Nullable</td>
+<td>הערה (למשל: יוצא בשעה X)</td>
+</tr>
+<tr>
+<td>markedBy</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>איש הסגל שסימן</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>DateTime, Nullable</td>
+<td>עדכון אחרון</td>
+</tr>
+<tr>
+<td>studentId + classId + date</td>
+<td>UNIQUE משולב</td>
+<td>מנע כפילות ליום אחד לאותו תלמיד בכיתה</td>
+</tr>
+</tbody>
+</table>
+<p>הערה: אם ביום נתון קיימת גם נוכחות פר־מפגש וגם יומית — יש להגדיר בלוגיקה מוצרית איזו רשומה דומיננטית לדוחות או מתי משתמשים בכל אחת.</p>
+<h2 id="forms">Forms </h2>
+<p>טבלה זו מתארת טפסים דינמיים במערכת ואת מדיניות ההגשה שלהם.<br>
+סוג ישות: <strong>Strong Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של טופס</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>כותרת הטופס</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String, Nullable</td>
+<td>תיאור הטופס (אופציונלי)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Enum: <code>GENERAL</code> / <code>ATTENDANCE</code> / <code>NAKSAL</code></td>
+<td>סוג הטופס</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>איש הסגל שיצר את הטופס</td>
+</tr>
+<tr>
+<td>submissionPolicy</td>
+<td>Enum: <code>ONCE</code> / <code>EDITABLE</code> / <code>MULTIPLE</code></td>
+<td>מדיניות הגשה: פעם אחת / עריכה / מספר הגשות</td>
+</tr>
+<tr>
+<td>maxSubmissions</td>
+<td>Number, Nullable</td>
+<td>מספר הגשות מקסימלי (רלוונטי כאשר המדיניות היא <code>MULTIPLE</code>)</td>
+</tr>
+<tr>
+<td>dutyStudentCanViewOthersSubmissions</td>
+<td>Boolean, Default false</td>
+<td>האם חניך תורן רשאי לצפות בהגשות של תלמידים אחרים בטופס זה</td>
+</tr>
+<tr>
+<td>dutyStudentCanEditOthersSubmissions</td>
+<td>Boolean, Default false</td>
+<td>האם חניך תורן רשאי לערוך את תוכן ההגשות של אחרים בטופס זה</td>
+</tr>
+<tr>
+<td>version</td>
+<td>Number, Default 1</td>
+<td>גרסת הטופס לצורך שמירת תאימות היסטורית</td>
+</tr>
+<tr>
+<td>isActive</td>
+<td>Boolean</td>
+<td>האם הטופס פעיל לשימוש</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="formquestions">FormQuestions </h2>
+<p>טבלה זו מתארת את השאלות השייכות לכל טופס.<br>
+סוג ישות: <strong>Dependent / Composition Entity (Child of Forms)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של שאלה</td>
+</tr>
+<tr>
+<td>formId</td>
+<td>FK -&gt; <code>Forms.id</code></td>
+<td>הטופס אליו השאלה שייכת</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>כותרת/ניסוח השאלה</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String, Nullable</td>
+<td>הסבר נוסף לשאלה (אופציונלי)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Enum: <code>TEXT</code> / <code>SINGLE_CHOICE</code> / <code>MULTIPLE_CHOICE</code> / <code>INFO</code></td>
+<td>סוג השאלה</td>
+</tr>
+<tr>
+<td>order</td>
+<td>Number</td>
+<td>סדר הופעת השאלה בטופס</td>
+</tr>
+<tr>
+<td>required</td>
+<td>Boolean</td>
+<td>האם השאלה חובה למענה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="questionoptions">QuestionOptions </h2>
+<p>טבלה זו מתארת את אפשרויות הבחירה עבור שאלות אמריקאיות בטפסים.<br>
+סוג ישות: <strong>Dependent / Composition Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של אפשרות תשובה</td>
+</tr>
+<tr>
+<td>questionId</td>
+<td>FK -&gt; <code>FormQuestions.id</code></td>
+<td>השאלה אליה האפשרות שייכת</td>
+</tr>
+<tr>
+<td>label</td>
+<td>String</td>
+<td>הטקסט המוצג למשתמש</td>
+</tr>
+<tr>
+<td>value</td>
+<td>String</td>
+<td>הערך הלוגי של האפשרות</td>
+</tr>
+<tr>
+<td>order</td>
+<td>Number</td>
+<td>סדר הופעת האפשרות בשאלה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="formassignments">FormAssignments </h2>
+<p>טבלה זו מתארת את שיוך הטפסים לתלמידים ואת סטטוס הטיפול שלהם.<br>
+סוג ישות: <strong>Junction Entity + Stateful</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של שיוך טופס לתלמיד</td>
+</tr>
+<tr>
+<td>formId</td>
+<td>FK -&gt; <code>Forms.id</code></td>
+<td>הטופס שנשלח</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד שקיבל את הטופס</td>
+</tr>
+<tr>
+<td>assignedAt</td>
+<td>DateTime</td>
+<td>מועד השיוך/שליחה</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Enum: <code>SENT</code> / <code>VIEWED</code> / <code>SUBMITTED</code></td>
+<td>סטטוס טיפול בטופס</td>
+</tr>
+<tr>
+<td>formId + studentId</td>
+<td>UNIQUE משולב</td>
+<td>מונע שיוך כפול של אותו טופס לאותו תלמיד</td>
+</tr>
+</tbody>
+</table>
+<h2 id="formsubmissions">FormSubmissions </h2>
+<p>טבלה זו מתארת את הגשות הטפסים שבוצעו בפועל על ידי תלמידים.<br>
+סוג ישות: <strong>Transactional Entity + Versioned Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של הגשת טופס</td>
+</tr>
+<tr>
+<td>formId</td>
+<td>FK -&gt; <code>Forms.id</code></td>
+<td>הטופס שהוגש</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד שהגיש את הטופס</td>
+</tr>
+<tr>
+<td>formVersion</td>
+<td>Number</td>
+<td>גרסת הטופס בזמן ההגשה</td>
+</tr>
+<tr>
+<td>submissionNumber</td>
+<td>Number</td>
+<td>מספר סידורי של ההגשה לאותו תלמיד באותו טופס</td>
+</tr>
+<tr>
+<td>isLatest</td>
+<td>Boolean</td>
+<td>האם זו ההגשה העדכנית ביותר</td>
+</tr>
+<tr>
+<td>submittedAt</td>
+<td>DateTime</td>
+<td>מועד ההגשה</td>
+</tr>
+<tr>
+<td>formId + studentId + submissionNumber</td>
+<td>UNIQUE משולב</td>
+<td>מונע כפילות במספור הגשות</td>
+</tr>
+<tr>
+<td>formId + studentId + isLatest=true</td>
+<td>UNIQUE חלקי</td>
+<td>מבטיח שרק הגשה אחת מסומנת כהגשה עדכנית</td>
+</tr>
+</tbody>
+</table>
+<p>חוק אינטגריטי: מדיניות <code>Forms.submissionPolicy</code> נאכפת לוגית:</p>
+<ul>
+<li><code>ONCE</code>: מותרת רק הגשה אחת (<code>submissionNumber=1</code> בלבד).</li>
+<li><code>EDITABLE</code>: נשמרת הגשה יחידה שמתעדכנת במקום (או גרסאות פנימיות ללא ריבוי רשומות פעילות).</li>
+<li><code>MULTIPLE</code>: ריבוי הגשות מותר עד <code>maxSubmissions</code> (אם מוגדר).</li>
+</ul>
+<h2 id="formanswers">FormAnswers </h2>
+<p>טבלה זו מתארת את התשובות שניתנו לכל שאלה בתוך הגשת טופס.<br>
+סוג ישות: <strong>Dependent Entity (Child of FormSubmissions)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של תשובה</td>
+</tr>
+<tr>
+<td>submissionId</td>
+<td>FK -&gt; <code>FormSubmissions.id</code></td>
+<td>ההגשה אליה התשובה שייכת</td>
+</tr>
+<tr>
+<td>questionId</td>
+<td>FK -&gt; <code>FormQuestions.id</code></td>
+<td>השאלה עליה ניתנה התשובה</td>
+</tr>
+<tr>
+<td>questionSnapshot</td>
+<td>JSON</td>
+<td>Snapshot של ניסוח/סוג השאלה בזמן ההגשה לשמירת היסטוריה</td>
+</tr>
+<tr>
+<td>answerText</td>
+<td>String, Nullable</td>
+<td>תשובה טקסטואלית (אם רלוונטי)</td>
+</tr>
+<tr>
+<td>selectedOptionId</td>
+<td>FK -&gt; <code>QuestionOptions.id</code>, Nullable</td>
+<td>אפשרות שנבחרה (אם רלוונטי)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="formansweroptions">FormAnswerOptions </h2>
+<p>טבלה זו מתארת בחירה מרובה (רב-ברירה) כתשובות המשויכות לאפשרויות.<br>
+סוג ישות: <strong>Junction Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי לשיוך תשובה-אפשרות</td>
+</tr>
+<tr>
+<td>answerId</td>
+<td>FK -&gt; <code>FormAnswers.id</code></td>
+<td>התשובה אליה השיוך שייך</td>
+</tr>
+<tr>
+<td>optionId</td>
+<td>FK -&gt; <code>QuestionOptions.id</code></td>
+<td>האפשרות שנבחרה (בשאלת רב-ברירה)</td>
+</tr>
+</tbody>
+</table>
+<p>הערה: <strong>אין מודל סקרים נפרד</strong> — תרחישים מסוג "סקר מהיר" (שאלה אחת + בחירה) ממומשים באמצעות <code>Forms</code> עם שאלת <code>SINGLE_CHOICE</code> / <code>MULTIPLE_CHOICE</code>.</p>
+<h2 id="conversations">Conversations </h2>
+<p>טבלה זו מתארת שיחות/שרשורים בתקשורת כדי לנהל רצף הודעות לאורך זמן.<br>
+סוג ישות: <strong>Strong Entity (Communication Aggregate Root)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של שיחה</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Enum: <code>CLASS</code> / <code>BROADCAST</code> / <code>DIRECT</code></td>
+<td>סוג השיחה</td>
+</tr>
+<tr>
+<td>classId</td>
+<td>FK -&gt; <code>Class.id</code>, Nullable</td>
+<td>כיתה משויכת כאשר מדובר בשיחת כיתה</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>יוצר השיחה</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="messages">Messages </h2>
+<p>טבלה זו מתארת פריטי תקשורת שנוצרים על ידי הסגל (הודעות וטפסים מקושרים).<br>
+סוג ישות: <strong>Strong Entity (Communication Aggregate Root)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של הודעה</td>
+</tr>
+<tr>
+<td>conversationId</td>
+<td>FK -&gt; <code>Conversations.id</code></td>
+<td>השיחה אליה ההודעה שייכת</td>
+</tr>
+<tr>
+<td>content</td>
+<td>String</td>
+<td>תוכן ההודעה</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Enum: <code>MESSAGE</code> / <code>FORM</code></td>
+<td>סוג הפריט התקשורתי</td>
+</tr>
+<tr>
+<td>formId</td>
+<td>FK -&gt; <code>Forms.id</code>, Nullable</td>
+<td>טופס משויך כאשר <code>type=FORM</code></td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>איש הסגל שיצר את ההודעה</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<p>חוק אינטגריטי: כאשר <code>type=FORM</code> חייב להיות <code>formId</code> מלא; כאשר <code>type=MESSAGE</code> שדה <code>formId</code> ריק.</p>
+<h2 id="messagetargets">MessageTargets </h2>
+<p>טבלה זו מתארת את קהל היעד הלוגי של ההודעה (תלמיד בודד/כיתה/קבוצה).<br>
+סוג ישות: <strong>Transactional Entity (Targeting Layer)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של יעד הודעה</td>
+</tr>
+<tr>
+<td>messageId</td>
+<td>FK -&gt; <code>Messages.id</code></td>
+<td>ההודעה המשויכת</td>
+</tr>
+<tr>
+<td>targetType</td>
+<td>Enum: <code>STUDENT</code> / <code>CLASS</code> / <code>GROUP</code></td>
+<td>סוג יעד ההודעה</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code>, Nullable</td>
+<td>יעד תלמיד כאשר <code>targetType=STUDENT</code></td>
+</tr>
+<tr>
+<td>classId</td>
+<td>FK -&gt; <code>Class.id</code>, Nullable</td>
+<td>יעד כיתה כאשר <code>targetType=CLASS</code></td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>FK -&gt; <code>Groups.id</code>, Nullable</td>
+<td>יעד קבוצה כאשר <code>targetType=GROUP</code></td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<p>חוק אינטגריטי: בהתאם ל-<code>targetType</code>, רק אחד מבין <code>studentId</code>/<code>classId</code>/<code>groupId</code> יהיה מלא.</p>
+<h2 id="messagedeliveries">MessageDeliveries </h2>
+<p>טבלה זו מתארת ניסיונות שליחה בפועל לכל נמען, כולל retry וספק תקשורת.<br>
+סוג ישות: <strong>Transactional Entity (Delivery Layer)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של ניסיון שליחה</td>
+</tr>
+<tr>
+<td>messageId</td>
+<td>FK -&gt; <code>Messages.id</code></td>
+<td>ההודעה שנשלחה</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>הנמען בפועל</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>Enum: <code>SMS</code> / <code>VOICE</code> / <code>EMAIL</code></td>
+<td>ערוץ השליחה בפועל</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>String</td>
+<td>ספק השליחה (למשל Twilio)</td>
+</tr>
+<tr>
+<td>attemptNumber</td>
+<td>Number</td>
+<td>מספר ניסיון השליחה לנמען/ערוץ</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Enum: <code>PENDING</code> / <code>SENT</code> / <code>DELIVERED</code> / <code>READ</code> / <code>FAILED</code></td>
+<td>סטטוס ניסיון השליחה</td>
+</tr>
+<tr>
+<td>providerMessageId</td>
+<td>String, Nullable</td>
+<td>מזהה הודעה אצל ספק התקשורת</td>
+</tr>
+<tr>
+<td>error</td>
+<td>String, Nullable</td>
+<td>שגיאה מהספק</td>
+</tr>
+<tr>
+<td>sentAt</td>
+<td>DateTime, Nullable</td>
+<td>זמן שליחה בפועל</td>
+</tr>
+<tr>
+<td>deliveredAt</td>
+<td>DateTime, Nullable</td>
+<td>זמן מסירה בפועל</td>
+</tr>
+<tr>
+<td>readAt</td>
+<td>DateTime, Nullable</td>
+<td>זמן קריאה</td>
+</tr>
+<tr>
+<td>messageId + studentId + channel + attemptNumber</td>
+<td>UNIQUE משולב</td>
+<td>מונע כפילות ניסיון שליחה זהה</td>
+</tr>
+</tbody>
+</table>
+<p>חוק אינטגריטי: כל רשומת Delivery חייבת להיות מגובה ביעד חוקי ב-<code>MessageTargets</code> (ישירות או דרך הרחבת יעד <code>CLASS</code>/<code>GROUP</code> לסט תלמידים).<br>
+חוק אינטגריטי נוסף: אין Delivery לסטודנט שאינו חלק מאף יעד מוגדר של אותה הודעה.</p>
+<h2 id="messagereplies">MessageReplies </h2>
+<p>טבלה זו מתארת תגובות משתמשים להודעות בתוך שיחה.<br>
+סוג ישות: <strong>Transactional Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של תגובה להודעה</td>
+</tr>
+<tr>
+<td>conversationId</td>
+<td>FK -&gt; <code>Conversations.id</code></td>
+<td>השיחה אליה התגובה שייכת</td>
+</tr>
+<tr>
+<td>messageId</td>
+<td>FK -&gt; <code>Messages.id</code></td>
+<td>ההודעה אליה מגיבים</td>
+</tr>
+<tr>
+<td>authorUserId</td>
+<td>FK -&gt; <code>Users.id</code></td>
+<td>המשתמש שכתב את התגובה</td>
+</tr>
+<tr>
+<td>parentReplyId</td>
+<td>FK -&gt; <code>MessageReplies.id</code>, Nullable</td>
+<td>תגובת אב ליצירת שרשור תגובות (Thread)</td>
+</tr>
+<tr>
+<td>content</td>
+<td>String</td>
+<td>תוכן התגובה</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="groups">Groups </h2>
+<p>טבלה זו מתארת קבוצות לימוד/פרויקט/פילוח לוגי מעבר לרמת כיתה.<br>
+סוג ישות: <strong>Strong Entity (Domain Entity)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של קבוצה</td>
+</tr>
+<tr>
+<td>classId</td>
+<td>FK -&gt; <code>Class.id</code>, Nullable</td>
+<td>כיתה משויכת לקבוצה (אם רלוונטי)</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>שם הקבוצה</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String, Nullable</td>
+<td>תיאור הקבוצה</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>FK -&gt; <code>Staff.id</code></td>
+<td>איש סגל שיצר את הקבוצה</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="groupmembers">GroupMembers </h2>
+<p>טבלה זו מתארת שיוך תלמידים לקבוצות.<br>
+סוג ישות: <strong>Junction Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של שיוך תלמיד לקבוצה</td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>FK -&gt; <code>Groups.id</code></td>
+<td>הקבוצה המשויכת</td>
+</tr>
+<tr>
+<td>studentId</td>
+<td>FK -&gt; <code>Students.id</code></td>
+<td>התלמיד המשויך</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>groupId + studentId</td>
+<td>UNIQUE משולב</td>
+<td>מונע שיוך כפול של אותו תלמיד לאותה קבוצה</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tasks">Tasks </h2>
+<p>טבלה זו מתארת משימות שנוצרות על ידי הסגל, כולל שיוך לחומר לימודי במידת הצורך.<br>
+סוג ישות: <strong>Strong Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של משימה</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>כותרת המשימה</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String, Nullable</td>
+<td>תיאור המשימה</td>
+</tr>
+<tr>
+<td>createdByUserId</td>
+<td>FK -&gt; <code>Users.id</code></td>
+<td>המשתמש שיצר את המשימה</td>
+</tr>
+<tr>
+<td>materialId</td>
+<td>FK -&gt; <code>Materials.id</code>, Nullable</td>
+<td>חומר לימודי משויך (אם המשימה קשורה לחומר)</td>
+</tr>
+<tr>
+<td>dueDate</td>
+<td>DateTime, Nullable</td>
+<td>מועד אחרון לביצוע</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Enum: <code>OPEN</code> / <code>IN_PROGRESS</code> / <code>DONE</code> / <code>CANCELLED</code></td>
+<td>סטטוס גלובלי מחושב/מנוהל למשימה</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>Enum: <code>LOW</code> / <code>MEDIUM</code> / <code>HIGH</code></td>
+<td>רמת עדיפות למשימה</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>תאריך יצירת הרשומה</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>DateTime</td>
+<td>תאריך עדכון אחרון</td>
+</tr>
+</tbody>
+</table>
+<h2 id="taskassignments">TaskAssignments </h2>
+<p>טבלה זו מתארת שיוך של משימות למשתמשים ומעקב ביצוע ברמת נמען.<br>
+סוג ישות: <strong>Transactional Entity</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי לשיוך משימה</td>
+</tr>
+<tr>
+<td>taskId</td>
+<td>FK -&gt; <code>Tasks.id</code></td>
+<td>המשימה המשויכת</td>
+</tr>
+<tr>
+<td>assigneeUserId</td>
+<td>FK -&gt; <code>Users.id</code></td>
+<td>המשתמש הנמען למשימה</td>
+</tr>
+<tr>
+<td>assignedAt</td>
+<td>DateTime</td>
+<td>מועד השיוך</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Enum: <code>OPEN</code> / <code>IN_PROGRESS</code> / <code>DONE</code> / <code>CANCELLED</code></td>
+<td>סטטוס המשימה עבור הנמען (Per Assignee)</td>
+</tr>
+<tr>
+<td>completedAt</td>
+<td>DateTime, Nullable</td>
+<td>מועד השלמה</td>
+</tr>
+<tr>
+<td>taskId + assigneeUserId</td>
+<td>UNIQUE משולב</td>
+<td>מונע שיוך כפול של אותה משימה לאותו משתמש</td>
+</tr>
+</tbody>
+</table>
+<h2 id="auditlogs">AuditLogs </h2>
+<p>טבלה זו מתארת לוג ביקורת מלא לכל שינוי מהותי שנעשה במערכת.<br>
+סוג ישות: <strong>Audit Entity (Append-only Log)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>שם פרמטר</th>
+<th>הערות</th>
+<th>תיאור בעברית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>מזהה ראשי (PK)</td>
+<td>מזהה ייחודי של אירוע ביקורת</td>
+</tr>
+<tr>
+<td>entityName</td>
+<td>String</td>
+<td>שם הישות עליה בוצעה פעולה</td>
+</tr>
+<tr>
+<td>entityId</td>
+<td>String</td>
+<td>מזהה הרשומה עליה בוצעה פעולה</td>
+</tr>
+<tr>
+<td>action</td>
+<td>Enum: <code>CREATE</code> / <code>UPDATE</code> / <code>DELETE</code> / <code>STATUS_CHANGE</code> / <code>ASSIGN</code></td>
+<td>סוג הפעולה שבוצעה</td>
+</tr>
+<tr>
+<td>oldValue</td>
+<td>JSON, Nullable</td>
+<td>הערך הישן לפני השינוי</td>
+</tr>
+<tr>
+<td>newValue</td>
+<td>JSON, Nullable</td>
+<td>הערך החדש אחרי השינוי</td>
+</tr>
+<tr>
+<td>changedFields</td>
+<td>JSON, Nullable</td>
+<td>רשימת שדות שהשתנו</td>
+</tr>
+<tr>
+<td>performedByType</td>
+<td>Enum: <code>STAFF</code> / <code>STUDENT</code> / <code>SYSTEM</code></td>
+<td>סוג המבצע של הפעולה</td>
+</tr>
+<tr>
+<td>performedById</td>
+<td>String, Nullable</td>
+<td>מזהה המבצע (אם קיים)</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>String, Nullable</td>
+<td>סיבת שינוי/הערה מנהלתית</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>מועד רישום האירוע</td>
+</tr>
+</tbody>
+</table>
+<p>אינדקסים מומלצים: <code>entityName</code>, <code>entityId</code>, <code>createdAt</code>, <code>performedById</code>, ואינדקס משולב <code>entityName + entityId + createdAt</code>.</p>
+<h2 id="indexing--integrity-rules-תכנון-db">Indexing &amp; Integrity Rules (תכנון DB) </h2>
+<p>סעיף זה מרכז כללי אינדקסים ואילוצים מומלצים לביצועים ולאמינות נתונים בסביבת ייצור.</p>
+<ul>
+<li>אינדקס חובה על כל FK בכל הטבלאות התפעוליות.</li>
+<li>אינדקסים תפעוליים מומלצים:
+<ul>
+<li><code>Attendance(studentId, sessionId)</code> ו-<code>ClassSessions(classId, startsAt)</code></li>
+<li><code>AttendanceDaily(studentId, classId, date)</code> ו-<code>AttendanceDaily(classId, date)</code></li>
+<li><code>Students(nationalId)</code> ו-<code>Students(personalNumber)</code> (כאשר לא NULL)</li>
+<li><code>StudentEvents(studentId, createdAt)</code></li>
+<li><code>Submissions(studentId, materialId, isLatest)</code> ו-<code>Submissions(submittedAt)</code></li>
+<li><code>MessageTargets(messageId, targetType)</code> ו-<code>MessageDeliveries(studentId, channel, status)</code></li>
+<li><code>TaskAssignments(status, assignedAt)</code> ו-<code>Tasks(dueDate, status)</code></li>
+</ul>
+</li>
+<li>אילוצי CHECK מומלצים:
+<ul>
+<li><code>MessageTargets</code> עבור <code>targetType</code> מול <code>studentId/classId/groupId</code></li>
+<li><code>FormSubmissions.submissionNumber &gt;= 1</code></li>
+<li><code>Grades.attemptNumber &gt;= 1</code></li>
+<li><code>Messages</code>: אם <code>type=FORM</code> אז <code>formId IS NOT NULL</code>; אם <code>type=MESSAGE</code> אז <code>formId IS NULL</code></li>
+<li><code>StudentClass.fromDate &lt;= toDate</code> כאשר <code>toDate</code> לא ריק</li>
+<li><code>StudentCohort.fromDate &lt;= toDate</code> כאשר <code>toDate</code> לא ריק</li>
+</ul>
+</li>
+<li>אילוצי UNIQUE חלקיים מומלצים:
+<ul>
+<li><code>StudentClass(studentId)</code> כאשר <code>toDate IS NULL</code></li>
+<li><code>StudentCohort(studentId)</code> כאשר <code>toDate IS NULL</code></li>
+<li><code>FormSubmissions(formId, studentId)</code> כאשר <code>isLatest=true</code></li>
+<li><code>Grades(studentId, materialId)</code> כאשר <code>isFinal=true AND materialId IS NOT NULL</code></li>
+<li><code>Grades(studentId, gradeType, title)</code> כאשר <code>isFinal=true AND materialId IS NULL</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="soft-delete-policy-תכנון-לוגי">Soft Delete Policy (תכנון לוגי) </h2>
+<p>לשקול הוספת <code>deletedAt</code> לטבלאות מרכזיות לצורך שחזור, בקרה ועמידה בדרישות רגולציה:<br>
+<code>Users</code>, <code>Staff</code>, <code>Students</code>, <code>Class</code>, <code>Materials</code>, <code>Forms</code>, <code>Messages</code>, <code>Tasks</code>, <code>Files</code>.</p>
+<hr>
+<h2 id="סיכום-קשרים-במילים-פשוטות">סיכום קשרים (במילים פשוטות) </h2>
+<ul>
+<li>סגל &lt;- הרשאות (דינמי)</li>
+<li>מחזור -&gt; כיתות -&gt; תלמידים</li>
+<li>תלמידים &lt;-&gt; מחזורים (עם היסטוריית טווח תאריכים דרך <code>StudentCohort</code>)</li>
+<li>תלמידים &lt;-&gt; כיתות (עם היסטוריית טווח תאריכים דרך <code>StudentClass</code>)</li>
+<li>כיתה -&gt; מפגשים (<code>ClassSessions</code>) -&gt; נוכחות פר־מפגש; נוכחות יומית (<code>AttendanceDaily</code>)</li>
+<li>כיתה -&gt; חומרים -&gt; משאבים -&gt; הגשות -&gt; ציונים</li>
+<li>טפסים (כולל תרחישי "סקר" בשאלה אחת) -&gt; שאלות -&gt; תשובות</li>
+<li>הודעות -&gt; יעדים (<code>MessageTargets</code>) -&gt; משלוחים (<code>MessageDeliveries</code>) -&gt; תגובות</li>
+<li>תלמידים -&gt; תקופות תורן (<code>StudentDutyPeriods</code>); אירועי תיק (<code>StudentEvents</code>) + צירופים</li>
+<li>כיתות -&gt; קבוצות -&gt; חברי קבוצה</li>
+<li>משימות -&gt; שיוכים (Users) -&gt; השלמה</li>
+<li>AuditLogs -&gt; תיעוד מלא של כל שינוי</li>
+</ul>
+<hr>
+<h2 id="מקרא-סוגי-ישויות-מונחי-db">מקרא סוגי ישויות (מונחי DB) </h2>
+<h3 id="strong-entity-ישות-ליבה">Strong Entity (ישות ליבה) </h3>
+<p>ישות עסקית מרכזית שעומדת בפני עצמה ויש לה זהות עצמאית במערכת.<br>
+בדרך כלל היא שורש של תהליכים אחרים ומכילה נתוני דומיין יציבים יחסית.</p>
+<h3 id="master-data">Master Data </h3>
+<p>נתוני אב מערכתיים שמשמשים כבסיס רוחבי למודולים רבים.<br>
+שינויים בהם משפיעים על ישויות נוספות ולכן הם מהווים מקור אמת מרכזי.</p>
+<h3 id="transactional-entity-ישות-תפעולית">Transactional Entity (ישות תפעולית) </h3>
+<p>ישות שמתעדת אירוע/פעולה שקרתה בזמן (מי עשה מה ומתי).<br>
+היא בדרך כלל גדלה מהר בנפח ומשמשת לדוחות, מעקב ואנליטיקה.</p>
+<h3 id="junction--associative-entity-ישות-קשר">Junction / Associative Entity (ישות קשר) </h3>
+<p>טבלת ביניים שמקשרת בין שתי ישויות או יותר, לרוב בקשרי רבים-לרבים.<br>
+לעיתים כוללת גם שדות עסקיים נוספים (כמו סטטוס או טווח תאריכים).</p>
+<h3 id="temporal-entity-ישות-היסטורית-זמנית">Temporal Entity (ישות היסטורית-זמנית) </h3>
+<p>ישות שמנהלת היסטוריה לאורך זמן באמצעות שדות תוקף כמו <code>fromDate</code>/<code>toDate</code>.<br>
+מאפשרת לדעת "מה היה המצב בתאריך מסוים" ולא רק מה המצב הנוכחי.</p>
+<h3 id="dependent--composition-entity-ישות-תלויה">Dependent / Composition Entity (ישות תלויה) </h3>
+<p>ישות שלא עומדת לבד ותלויה לוגית בישות הורה.<br>
+לרוב נמחקת/מאבדת משמעות ללא ההורה, ומשמשת לפירוק מבנה מורכב.</p>
+<h3 id="reference--lookup-entity-ישות-ייחוס">Reference / Lookup Entity (ישות ייחוס) </h3>
+<p>טבלת ערכי ייחוס יחסית יציבים (כמו הרשאות או קטגוריות קבועות).<br>
+נועדה למנוע hardcode ולהפוך ניהול ערכים קבועים לניתן לתחזוקה.</p>
+<h3 id="asset--resource-entity-ישות-משאב">Asset / Resource Entity (ישות משאב) </h3>
+<p>ישות שמייצגת נכס דיגיטלי כמו קובץ, קישור או וידאו.<br>
+משמשת לשיוך משאבים לתכנים שונים תוך שמירה על מטא-דאטה אחיד.</p>
+<h3 id="audit-entity-ישות-ביקורת">Audit Entity (ישות ביקורת) </h3>
+<p>ישות append-only שמטרתה תיעוד שינויים לצורך בקרה, מעקב ותחקור.<br>
+בדרך כלל לא מעדכנים רשומות קיימות אלא רק מוסיפים אירועים חדשים.</p>
+<h3 id="communication-aggregate-root-שורש-אגרגט-תקשורת">Communication Aggregate Root (שורש אגרגט תקשורת) </h3>
+<p>ישות מרכזית שמנהלת תהליך תקשורת ומאגדת תחתיה הודעות, יעדים ומסירות.<br>
+מגדירה גבולות עקביות לדומיין התקשורת ומרכזת את הלוגיקה העסקית סביבו.</p>
+</div>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

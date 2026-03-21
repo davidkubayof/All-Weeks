@@ -1,0 +1,5 @@
+// שפה: TypeScript. צד שרת: Node.js עם Express. צד לקוח: React עם Vite ועיצוב באמצעות שימוש בספריות Tailwind ו־shadcn/ui. מסד נתונים: PostgreSQL עם Prisma.
+
+// סביבת הרצה: ב-Cloud Hosting עם Docker. אחסון קבצים: DigitalOcean.
+
+// חיבור ל־APIs חיצוניים (ספק תקשורת לשליחת הודעות SMS וקוליות וספק לשליחת מיילים).

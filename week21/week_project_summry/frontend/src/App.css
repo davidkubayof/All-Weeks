@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pageLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.reportPage{
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
