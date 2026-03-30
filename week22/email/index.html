@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תזמון הודעות - מערכת שליחה</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; background: #f4f7f6; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 450px; }
+        h2 { color: #333; margin-bottom: 20px; text-align: center; }
+        .group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; }
+        input[type="text"], input[type="email"], input[type="datetime-local"], textarea {
+            width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;
+        }
+        .checkbox-group { display: flex; gap: 15px; background: #f9f9f9; padding: 10px; border-radius: 6px; }
+        .checkbox-item { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+        button { 
+            width: 100%; background: #007bff; color: white; border: none; padding: 12px; 
+            border-radius: 6px; font-size: 16px; cursor: pointer; transition: 0.3s;
+        }
+        button:hover { background: #0056b3; }
+        #status { margin-top: 15px; padding: 10px; border-radius: 6px; display: none; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>תזמון הודעה חדשה</h2>
+    
+    <div class="group">
+        <label>אימייל ליעד:</label>
+        <input type="email" id="email" placeholder="example@gmail.com" required>
+    </div>
+
+    <div class="group">
+        <label>נושא ההודעה:</label>
+        <input type="text" id="subject" placeholder="נושא המייל">
+    </div>
+
+    <div class="group">
+        <label>תוכן ההודעה:</label>
+        <textarea id="message" rows="3" placeholder="מה לכתוב בהודעה?"></textarea>
+    </div>
+
+    <div class="group">
+        <label>מספר טלפון (לוואטסאפ):</label>
+        <input type="text" id="phone" placeholder="972500000000">
+    </div>
+
+    <div class="group">
+        <label>מתי לשלוח?</label>
+        <input type="datetime-local" id="userDate" required>
+    </div>
+
+    <div class="group">
+        <label>ערוצי שליחה:</label>
+        <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" id="sendEmail" checked> אימייל</label>
+            <label class="checkbox-item"><input type="checkbox" id="sendWhatsApp"> וואטסאפ</label>
+        </div>
+    </div>
+
+    <button onclick="scheduleNotification()">שלח לתזמון 🚀</button>
+
+    <div id="status"></div>
+</div>
+
+<script>
+    async function scheduleNotification() {
+        const statusDiv = document.getElementById('status');
+        
+        const isEmailChecked = document.getElementById('sendEmail').checked;
+        const isWhatsAppChecked = document.getElementById('sendWhatsApp').checked;
+
+        if (!isEmailChecked && !isWhatsAppChecked) {
+            alert("חובה לבחור לפחות ערוץ שליחה אחד (אימייל או וואטסאפ)!");
+            return; // עוצר את הפונקציה ולא ממשיך לשרת
+        }
+        
+        // 1. איסוף הנתונים מהממשק
+        const rawDate = document.getElementById('userDate').value; // פורמט: YYYY-MM-DDTHH:mm
+        if (!rawDate) return alert("חובה לבחור תאריך ושעה");
+
+        // המרה לפורמט שהשרת שלך מצפה לו: MM/DD/YYYY HH:mm
+        const d = new Date(rawDate);
+        const formattedDate = `${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}/${d.getFullYear()} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+
+        const payload = {
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value,
+            phone: document.getElementById('phone').value,
+            userDate: formattedDate,
+            sendEmail: document.getElementById('sendEmail').checked,
+            sendWhatsApp: document.getElementById('sendWhatsApp').checked
+        };
+
+        statusDiv.style.display = 'block';
+        statusDiv.innerText = 'שולח...';
+        statusDiv.style.background = '#eee';
+
+        try {
+            // 2. שליחה לשרת ה-Node.js שלך
+            const response = await fetch('http://localhost:3000/api/schedule-notification', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                statusDiv.innerText = '✅ התזמון נשמר בהצלחה!';
+                statusDiv.style.background = '#d4edda';
+            } else {
+                statusDiv.innerText = '❌ שגיאה: ' + (result.error || 'תקלה בשרת');
+                statusDiv.style.background = '#f8d7da';
+            }
+        } catch (err) {
+            statusDiv.innerText = '❌ לא ניתן להתחבר לשרת. וודא ש-server.ts רץ.';
+            statusDiv.style.background = '#f8d7da';
+        }
+    }
+</script>
+
+</body>
+</html>

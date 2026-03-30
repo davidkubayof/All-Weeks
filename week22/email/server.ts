@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 // אנחנו מייבאים את express כדיפולט, ואת הטיפוסים בנפרד (רק עבור TS)
 import type { Request, Response } from 'express';
 // 1. מבנה הנתונים שאנחנו מצפים לקבל מהמשתמש (בפורמט שלו)
@@ -11,8 +12,8 @@ interface IncomingNotification {
   subject?: string;
   userDate: string; // הפורמט של המשתמש: MM/DD/YYYY HH:mm
 }
-
 const app = express();
+app.use(cors()); // זה יאפשר ל-HTML שלך לשלוח בקשות לשרת בלי חסימות
 app.use(express.json()); // מאפשר לשרת לקרוא JSON מהבקשות שנשלחות אליו
 
 /**
@@ -45,6 +46,14 @@ app.post('/api/schedule-notification', async (req: Request, res: Response) => {
 
     const data: IncomingNotification = req.body;
 
+    // --- בדיקה חדשה: האם המשתמש בחר לפחות ערוץ אחד? ---
+    if (!data.sendEmail && !data.sendWhatsApp) {
+      console.warn('⚠️ ניסיון שליחה ללא בחירת ערוץ (אימייל או וואטסאפ)');
+      return res.status(400).json({ 
+          success: false, 
+          error: 'חובה לבחור לפחות ערוץ שליחה אחד (אימייל או וואטסאפ).' 
+      });
+  }
     // 2. ביצוע ההמרה ל-ISO
     const isoDate = parseUserDateTime(data.userDate);
     console.log(`🔄 הומר לפורמט n8n (UTC): ${isoDate}`);
@@ -60,7 +69,7 @@ app.post('/api/schedule-notification', async (req: Request, res: Response) => {
     };
 
     // 3. שליחה ל-n8n
-    const n8nResponse = await fetch('http://localhost:5678/webhook/send-message', {
+    const n8nResponse = await fetch('http://localhost:5678/webhook-test/send-message', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(n8nPayload),
